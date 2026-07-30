@@ -12,6 +12,9 @@ const nextConfig = {
   },
   experimental: {
     useTypeScriptCli: true
+  },
+  turbopack: {
+    root: './'
   }
 };
 
