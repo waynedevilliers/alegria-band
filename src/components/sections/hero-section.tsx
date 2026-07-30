@@ -14,7 +14,10 @@ export function HeroSection() {
         priority
         className="absolute inset-0 w-full h-full object-contain"
       />
-      <div className="absolute inset-0 bg-hero-warm" />
+      {/* Color grade overlay */}
+      <div className="absolute inset-0 bg-linear-to-br from-primary/20 via-transparent to-primary/30 mix-blend-multiply" />
+      {/* Gradient overlay for text contrast */}
+      <div className="absolute inset-0 bg-linear-to-t from-ink via-transparent to-transparent opacity-40" />
       <div className="relative mx-auto flex min-h-svh max-w-7xl items-end px-4 pb-10 pt-28 sm:px-6 lg:px-8 lg:pb-16">
         <div className="max-w-3xl text-cream">
           <p className="mb-3 inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-cream/90 backdrop-blur-md">

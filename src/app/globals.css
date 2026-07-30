@@ -57,6 +57,27 @@ body {
   color: var(--color-text);
 }
 
+/* Section gradient backgrounds for subtle depth */
+section {
+  position: relative;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(189, 34, 30, 0.1),
+    transparent
+  );
+  pointer-events: none;
+}
+
 ::selection {
   background: rgba(189, 34, 30, 0.25);
   color: var(--color-text-light);
@@ -137,5 +158,56 @@ body {
 
   .border-primary {
     @apply border-primary;
+  }
+
+  /* Micro-interactions */
+  .hover-lift {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-md;
+  }
+
+  .hover-underline-primary {
+    @apply relative transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full;
+  }
+
+  /* Respect prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    .hover-lift,
+    .hover-underline-primary,
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+
+  /* Fade-in animation for scroll reveal */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(2rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  /* Stagger animations for gallery items */
+  @keyframes stagger {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-stagger {
+    animation: stagger 0.4s ease-out forwards;
   }
 }
