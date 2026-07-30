@@ -42,6 +42,8 @@ export function FotosSection() {
 
   const currentImage = galleryImages[currentIndex];
 
+  if (!currentImage) return null;
+
   return (
     <section
       id="fotos"

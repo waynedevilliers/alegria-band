@@ -1,17 +1,41 @@
 @import "tailwindcss";
 
 @theme {
+  /* Extracted from Alegría! logo */
+  --color-primary: #bd221e;
+
+  /* Semantic color tokens */
+  --color-surface: #fafaf8;
+  --color-surface-alt: #f0ebe3;
+  --color-surface-dark: #fff9f0;
+
+  /* Text colors */
+  --color-text: #1a1a1a;
+  --color-text-light: #ffffff;
+  --color-text-muted: #6b6b6b;
+
+  /* Legacy brand colors (keeping for component compatibility) */
   --color-clay: #b4573f;
   --color-terracotta: #c96d45;
-  --color-sangria: #6c1f23;
-  --color-cream: #f5e8d5;
-  --color-sand: #ead7c1;
-  --color-ink: #28170f;
+  --color-sangria: #bd221e;
+  --color-cream: #fafaf8;
+  --color-sand: #f0ebe3;
+  --color-ink: #1a1a1a;
 
+  /* Fonts (system defaults for now, will add via next/font) */
   --font-display: Georgia, Times New Roman, serif;
-  --font-sans: ui-sans-serif, system-ui, sans-serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, sans-serif;
 
-  --shadow-glow: 0 25px 80px rgba(108, 31, 35, 0.28);
+  /* Shadows */
+  --shadow-glow: 0 25px 80px rgba(189, 34, 30, 0.28);
+  --shadow-soft: 0 4px 12px rgba(189, 34, 30, 0.08);
+  --shadow-md: 0 10px 25px rgba(189, 34, 30, 0.12);
+
+  /* Radius scale */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 2rem;
 }
 
 :root {
@@ -28,20 +52,31 @@ html {
 
 body {
   margin: 0;
-  font-family: ui-sans-serif, system-ui, sans-serif;
-  background:
-    radial-gradient(circle at top, rgba(255, 216, 177, 0.15), transparent 38%),
-    linear-gradient(180deg, #28170f 0%, #3c1f17 35%, #f5e8d5 35%, #f5e8d5 100%);
-  color: #28170f;
+  font-family: var(--font-sans);
+  background: linear-gradient(180deg, #1a1a1a 0%, #2a2a2a 20%, #fafaf8 20%, #fafaf8 100%);
+  color: var(--color-text);
 }
 
 ::selection {
-  background: rgba(108, 31, 35, 0.2);
-  color: #28170f;
+  background: rgba(189, 34, 30, 0.25);
+  color: var(--color-text-light);
 }
 
 @layer utilities {
   .text-wrap-balance {
     text-wrap: balance;
+  }
+
+  /* Semantic color utilities */
+  .bg-primary {
+    @apply bg-primary;
+  }
+
+  .text-primary {
+    @apply text-primary;
+  }
+
+  .border-primary {
+    @apply border-primary;
   }
 }
