@@ -22,9 +22,9 @@
   --color-sand: #f0ebe3;
   --color-ink: #1a1a1a;
 
-  /* Fonts (system defaults for now, will add via next/font) */
-  --font-display: Georgia, Times New Roman, serif;
-  --font-sans: ui-sans-serif, system-ui, -apple-system, sans-serif;
+  /* Fonts (loaded via next/font, fallback to system) */
+  --font-display: 'Playfair Display', Georgia, Times New Roman, serif;
+  --font-sans: 'Lato', ui-sans-serif, system-ui, -apple-system, sans-serif;
 
   /* Shadows */
   --shadow-glow: 0 25px 80px rgba(189, 34, 30, 0.28);
@@ -65,6 +65,65 @@ body {
 @layer utilities {
   .text-wrap-balance {
     text-wrap: balance;
+  }
+
+  /* Typography hierarchy - Playfair for headings */
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-sans);
+  }
+
+  /* Fluid type scale for responsive headlines */
+  .text-h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .text-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.875rem, 4vw, 3rem);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+  }
+
+  .text-h3 {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+
+  .text-h4 {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .text-body-lg {
+    font-family: var(--font-sans);
+    font-size: 1.125rem;
+    line-height: 1.7;
+  }
+
+  .text-body {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .text-body-sm {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    line-height: 1.5;
   }
 
   /* Semantic color utilities */

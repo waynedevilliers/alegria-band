@@ -1,6 +1,21 @@
 import type { Metadata } from 'next';
+import { Playfair_Display, Lato } from 'next/font/google';
 import { Navbar } from '@/components/navbar';
 import './globals.css';
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '600', '700', '800', '900'],
+  variable: '--font-display',
+  display: 'swap',
+});
+
+const lato = Lato({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-sans',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'Alegría! — Akustik-Sound mit Fiesta-Feeling',
@@ -39,7 +54,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="de">
+    <html lang="de" className={`${playfair.variable} ${lato.variable}`}>
       <body className="font-sans">
         <Navbar />
         {children}
