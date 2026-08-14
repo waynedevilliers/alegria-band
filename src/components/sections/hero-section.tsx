@@ -5,38 +5,38 @@ const heroImage = '/images/hero/hero-band-live.jpg';
 
 export function HeroSection() {
   return (
-    <section id="hero" className="relative isolate overflow-hidden min-h-svh pt-16">
-      <Image
-        src={heroImage}
-        alt={content.hero.imageAlt}
-        width={1600}
-        height={900}
-        priority
-        className="absolute inset-0 w-full h-full object-contain"
-      />
-      {/* Color grade overlay */}
-      <div className="absolute inset-0 bg-linear-to-br from-primary/20 via-transparent to-primary/30 mix-blend-multiply" />
-      {/* Gradient overlay for text contrast */}
-      <div className="absolute inset-0 bg-linear-to-t from-ink via-transparent to-transparent opacity-40" />
-      <div className="relative mx-auto flex min-h-svh max-w-7xl items-end px-4 pb-10 pt-28 sm:px-6 lg:px-8 lg:pb-16">
-        <div className="max-w-3xl text-cream">
-          <p className="mb-3 inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-cream/90 backdrop-blur-md">
+    <section id="hero" className="relative bg-white pt-16 sm:pt-24 lg:pt-0 lg:min-h-svh lg:flex lg:items-center">
+      {/* Left Column - Text */}
+      <div className="px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-0 lg:w-1/2 lg:pr-12">
+        <div className="mx-auto max-w-3xl lg:mx-0 lg:max-w-none">
+          <p className="mb-3 inline-flex rounded-full border border-sangria/20 bg-sangria/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-sangria">
             Nordheim am Main, Germany
           </p>
-          <h1 className="max-w-4xl font-display text-5xl font-semibold tracking-tight text-wrap-balance sm:text-7xl lg:text-8xl">
+          <h1 className="mt-6 font-display text-5xl font-semibold tracking-tight text-ink sm:text-6xl lg:text-7xl">
             Alegría!
           </h1>
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-cream/92 sm:text-2xl">
+          <p className="mt-6 text-lg leading-8 text-ink/75 sm:text-xl max-w-2xl">
             {content.hero.tagline}
           </p>
           <a
             href="#bandvorstellung"
-            className="mt-10 inline-flex items-center gap-3 rounded-full border border-cream/30 bg-cream px-6 py-3 font-semibold text-sangria shadow-xl transition hover:bg-sand"
+            className="mt-10 inline-flex items-center gap-3 rounded-full bg-sangria px-8 py-4 font-semibold text-white shadow-lg transition hover:bg-sangria/90 hover:shadow-xl"
           >
             {content.hero.scrollLabel}
             <span aria-hidden="true">↓</span>
           </a>
         </div>
+      </div>
+
+      {/* Right Column - Image */}
+      <div className="relative lg:w-1/2 lg:min-h-svh">
+        <Image
+          src={heroImage}
+          alt={content.hero.imageAlt}
+          fill
+          priority
+          className="w-full h-full object-cover"
+        />
       </div>
     </section>
   );
