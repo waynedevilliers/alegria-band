@@ -29,7 +29,7 @@ export function HeroSection() {
       </div>
 
       {/* Right Column - Image */}
-      <div className="w-full px-4 sm:px-8 py-12 lg:w-1/2 lg:px-12 lg:py-0 lg:flex lg:items-center lg:justify-center">
+      <div className="w-full px-4 sm:px-8 py-12 lg:w-1/2 lg:pl-8 lg:pr-12 lg:py-0 lg:flex lg:items-center lg:justify-center">
         <div className="relative w-full max-w-md lg:max-w-2xl rounded-3xl overflow-hidden shadow-2xl border-4 border-sand/40 bg-cream flex items-center justify-center">
           <Image
             src={heroImage}
