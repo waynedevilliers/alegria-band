@@ -1,6 +1,8 @@
+// TODO: Confirm framing with client — currently using Framing A (about the songs, not band age).
+// If band has existed ~40 years, switch to Framing B: "Seit 40 Jahren auf der Bühne..."
 export const content = {
   hero: {
-    tagline: "Gipsy-, Latin- und Party-Hits in mitreißenden Akustik-Versionen",
+    tagline: "Pop-Hits aus vier Jahrzehnten – neu interpretiert mit Latin-Flair. Alegría! bringt Songs, die Sie kennen und lieben, in einem mitreißenden, spanisch-lateinamerikanisch inspirierten Akustik-Sound auf die Bühne.",
     scrollLabel: "Runterscrollen",
     imageAlt: "Alegría! live auf der Bühne vor warmem Festivallicht",
   },
@@ -9,9 +11,9 @@ export const content = {
     title: "Bandvorstellung",
     bio: {
       intro:
-        "Alegría! ist die erste Wahl, wenn Sie eine professionelle Live-Band für jegliche Veranstaltungen mit Stil suchen: 100 % 'handgemachte' Akustik-Musik zum Zuhören, Tanzen und Feiern. Das abwechslungsreiche Programm geht von spanisch-lateinamerikanischer Pop- und Partymusik von Alvaro Soler, den Gipsy Kings über Sting, Police und beliebte Oldies bis hin zu Rock-Pop-Hits im Akustik-Sound.",
+        "Pop-Hits aus vier Jahrzehnten – neu interpretiert mit Latin-Flair. Alegría! bringt bekannte Songs in einem mitreißenden, spanisch-lateinamerikanisch inspirierten Akustik-Sound auf die Bühne. Mit 2 Akustik-Gitarren, Bass, mehrstimmigem Gesang und Cajon/Percussion interpretieren die Musiker sowohl Latin-Klassiker wie auch beliebte Rock- und Pop-Songs im energiegeladenen Gipsy Kings-Sound – perfekt zum Zuhören, Tanzen und Feiern.",
       details:
-        "Mit 2 Akustik-Gitarren, Bass, mehrstimmigem Gesang und Cajon/Percussion interpretieren Alegría! sowohl Latin-Klassiker wie auch bekannte Rock- und Pop- Songs im mitreißenden Gipsy Kings-Sound. Dabei tritt die Band mit 'kleinem Gepäck' auf, oder kraftvoll verstärkt – ganz nach Art der Veranstaltung, der Location und natürlich Ihren Vorstellungen. Ein großer Bühnenaufbau ist kein Muss, so dass auch in kleineren Räumlichkeiten (bis hin zum \"Wohnzimmerkonzert\") ein mitreißender Live-Event möglich ist. Dabei sorgt besonders der direkte Draht der Band zu ihrem Publikum für stimmungsvolles Entertainment.",
+        "Egal ob Hochzeiten, Firmenfeiern, Festivals oder private Gartenfeste – Alegría! passt sich flexibel an die Gegebenheiten vor Ort an. Die Band tritt mit 'kleinem Gepäck' auf oder verstärkt kraftvoll, ganz nach Art der Veranstaltung. Ein großer Bühnenaufbau ist kein Muss. Auch Wohnzimmerkonzerte in kleineren Räumlichkeiten sind möglich. Besonders der direkte Draht der Band zu ihrem Publikum schafft stimmungsvolles Entertainment und sorgt dafür, dass Ihre Gäste mittanzen und mitsingen – denn die Songs kennen sie bereits!",
     },
     setlist: {
       label: "Setlist",
