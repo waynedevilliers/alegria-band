@@ -2,121 +2,116 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
+import Lightbox from 'yet-another-react-lightbox';
+import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
+import Counter from 'yet-another-react-lightbox/plugins/counter';
+import 'yet-another-react-lightbox/styles.css';
+import 'yet-another-react-lightbox/plugins/thumbnails.css';
 import { content } from '@/data/content';
+import { ImageWithGrade } from '@/components/image-with-grade';
 
 const galleryImages = [
   {
     src: '/images/foto_section/fotos.jpg',
     alt: 'Alegría! Fotos',
+    size: 'large',
   },
   {
     src: '/images/foto_section/band_vorstellung.jpg',
     alt: 'Alegría! Bandvorstellung',
+    size: 'medium',
   },
   {
     src: '/images/foto_section/videos.jpg',
     alt: 'Alegría! Videos',
+    size: 'medium',
   },
   {
     src: '/images/foto_section/kontakt.jpg',
     alt: 'Alegría! Kontakt',
+    size: 'small',
   },
   {
     src: '/images/foto_section/termine.jpg',
     alt: 'Alegría! Termine',
+    size: 'small',
   },
 ];
 
 export function FotosSection() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [index, setIndex] = useState(-1);
 
-  const goToPrevious = () => {
-    setCurrentIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+  const lightboxSlides = galleryImages.map((image) => ({
+    src: image.src,
+    alt: image.alt,
+    width: 1200,
+    height: 1200,
+  }));
+
+  const sizeClasses = {
+    large: 'md:col-span-2 md:row-span-2',
+    medium: 'md:col-span-1 md:row-span-1',
+    small: 'md:col-span-1 md:row-span-1',
   };
-
-  const goToNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % galleryImages.length);
-  };
-
-  const currentImage = galleryImages[currentIndex]!;
 
   return (
     <section
       id="fotos"
-      className="scroll-mt-24 space-y-8 bg-cream px-4 py-20 sm:px-6 lg:px-8"
+      className="scroll-mt-24 space-y-8 bg-surface px-4 py-20 sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
-        <p className="text-sm font-semibold uppercase tracking-[0.35em] text-sangria/75">
+        <p className="text-sm font-semibold uppercase tracking-[0.35em] text-primary/75">
           {content.photos.label}
         </p>
         <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
           {content.photos.title}
         </h2>
-        <p className="mt-4 text-lg text-ink/75">{content.photos.intro}</p>
+        <p className="mt-4 text-lg text-text-muted">{content.photos.intro}</p>
       </div>
 
-      <div className="mx-auto max-w-4xl">
-        <div className="relative rounded-[2rem] overflow-hidden bg-ink/10 shadow-glow">
-          <div className="relative aspect-video">
-            <Image
-              src={currentImage.src}
-              alt={currentImage.alt}
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
-
-          <div className="absolute inset-0 flex items-center justify-between px-6">
+      {/* Masonry Gallery */}
+      <div className="mx-auto max-w-7xl">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 md:grid-rows-3 auto-rows-max">
+          {galleryImages.map((image, imgIndex) => (
             <button
-              onClick={goToPrevious}
-              className="group relative z-10 rounded-full bg-white/90 p-3 transition hover:bg-white shadow-lg"
-              aria-label="Previous image"
+              key={imgIndex}
+              onClick={() => setIndex(imgIndex)}
+              className={`group relative overflow-hidden rounded-xl shadow-soft hover:shadow-md transition-all duration-300 hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${sizeClasses[image.size as keyof typeof sizeClasses]} aspect-square`}
+              aria-label={`Open ${image.alt}`}
             >
-              <svg
-                className="h-6 w-6 text-ink transition group-hover:scale-110"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
+              <ImageWithGrade
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="h-full w-full"
+                grade
+              />
             </button>
-
-            <button
-              onClick={goToNext}
-              className="group relative z-10 rounded-full bg-white/90 p-3 transition hover:bg-white shadow-lg"
-              aria-label="Next image"
-            >
-              <svg
-                className="h-6 w-6 text-ink transition group-hover:scale-110"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <div className="mt-6 flex items-center justify-between text-sm text-ink">
-          <p>{currentImage.alt}</p>
-          <p className="font-semibold">
-            {currentIndex + 1} / {galleryImages.length}
-          </p>
+          ))}
         </div>
       </div>
+
+      {/* Yet Another React Lightbox */}
+      <Lightbox
+        slides={lightboxSlides}
+        open={index >= 0}
+        index={index}
+        close={() => setIndex(-1)}
+        on={{
+          view: ({ index: currentIndex }) => setIndex(currentIndex),
+        }}
+        plugins={[Thumbnails, Counter]}
+        thumbnails={{
+          position: 'bottom',
+          width: 100,
+          height: 100,
+          border: 1,
+          borderColor: 'rgba(255, 255, 255, 0.2)',
+          gap: 4,
+          padding: 4,
+        }}
+        counter={{ container: { style: { top: 0, left: 0 } } }}
+      />
     </section>
   );
 }
