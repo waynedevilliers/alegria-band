@@ -5,22 +5,22 @@ const heroImage = '/images/hero/hero-band-live.jpg';
 
 export function HeroSection() {
   return (
-    <section id="hero" className="relative bg-white pt-16 sm:pt-24 lg:pt-0 lg:min-h-svh lg:flex lg:items-center">
+    <section id="hero" className="relative bg-cream pt-12 sm:pt-16 lg:pt-0 lg:min-h-svh lg:flex lg:items-center lg:gap-8 lg:px-8">
       {/* Left Column - Text */}
-      <div className="px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-0 lg:w-1/2 lg:pr-12">
-        <div className="mx-auto max-w-3xl lg:mx-0 lg:max-w-none">
-          <p className="mb-3 inline-flex rounded-full border border-sangria/20 bg-sangria/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-sangria">
+      <div className="lg:w-1/2 lg:flex lg:items-center lg:pl-8">
+        <div className="px-4 sm:px-8 py-16 sm:py-20 lg:py-0 lg:px-0 max-w-2xl">
+          <p className="mb-4 inline-flex rounded-full border border-sangria/30 bg-sangria/5 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.35em] text-sangria">
             Nordheim am Main, Germany
           </p>
-          <h1 className="mt-6 font-display text-5xl font-semibold tracking-tight text-ink sm:text-6xl lg:text-7xl">
+          <h1 className="mt-8 font-display text-6xl font-semibold tracking-tight text-ink sm:text-7xl lg:text-8xl leading-tight">
             Alegría!
           </h1>
-          <p className="mt-6 text-lg leading-8 text-ink/75 sm:text-xl max-w-2xl">
+          <p className="mt-8 text-lg leading-relaxed text-ink/70 sm:text-xl">
             {content.hero.tagline}
           </p>
           <a
             href="#bandvorstellung"
-            className="mt-10 inline-flex items-center gap-3 rounded-full bg-sangria px-8 py-4 font-semibold text-white shadow-lg transition hover:bg-sangria/90 hover:shadow-xl"
+            className="mt-12 inline-flex items-center gap-3 rounded-full bg-sangria px-10 py-4 font-semibold text-white shadow-xl transition hover:bg-sangria/90 hover:shadow-2xl hover:scale-105"
           >
             {content.hero.scrollLabel}
             <span aria-hidden="true">↓</span>
@@ -29,14 +29,16 @@ export function HeroSection() {
       </div>
 
       {/* Right Column - Image */}
-      <div className="relative lg:w-1/2 lg:min-h-svh">
-        <Image
-          src={heroImage}
-          alt={content.hero.imageAlt}
-          fill
-          priority
-          className="w-full h-full object-cover"
-        />
+      <div className="relative lg:w-1/2 lg:min-h-svh flex items-center justify-end px-4 sm:px-8 py-12 lg:py-0 lg:px-8 lg:pr-8">
+        <div className="relative w-full aspect-square max-w-md lg:max-w-none lg:h-125 lg:w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-sand/40">
+          <Image
+            src={heroImage}
+            alt={content.hero.imageAlt}
+            fill
+            priority
+            className="w-full h-full object-cover"
+          />
+        </div>
       </div>
     </section>
   );
