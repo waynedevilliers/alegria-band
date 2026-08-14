@@ -16,7 +16,7 @@ export function DieMusikiSection() {
       <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-8 justify-items-center">
         {content.musiker.members.map((member, index) => (
           <div key={member.name} className="flex flex-col items-center w-full">
-            <div className="relative w-[170px] h-[238px] rounded-3xl overflow-hidden shadow-md">
+            <div className="relative w-24 h-32 rounded-lg overflow-hidden shadow-md">
               <Image
                 src={member.image}
                 alt={member.imageAlt}

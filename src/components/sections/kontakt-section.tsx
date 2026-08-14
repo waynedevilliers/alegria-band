@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { content } from '@/data/content';
 
 export function KontaktSection() {
@@ -8,14 +9,27 @@ export function KontaktSection() {
     >
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-8 rounded-[2rem] bg-sangria p-8 text-cream shadow-glow lg:grid-cols-[0.95fr_1.05fr] lg:items-center sm:p-10">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cream/70">
-              {content.contact.label}
-            </p>
-            <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight sm:text-5xl">
-              {content.contact.title}
-            </h2>
-            <p className="mt-4 text-lg text-cream/85">{content.contact.person}</p>
+          <div className="flex flex-col items-center lg:items-start gap-4">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cream/70">
+                {content.contact.label}
+              </p>
+              <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+                {content.contact.title}
+              </h2>
+            </div>
+            <div className="flex flex-col items-center lg:items-start gap-3">
+              <p className="text-lg text-cream/85">{content.contact.person}</p>
+              <div className="w-24">
+                <Image
+                  src="/images/band_members/Gerd_Benno_Hofmann.jpg"
+                  alt="Gerd 'Benno' Hofmann"
+                  width={96}
+                  height={134}
+                  className="w-full h-auto rounded-lg shadow-md"
+                />
+              </div>
+            </div>
           </div>
           <div className="grid gap-4 rounded-[1.75rem] bg-cream/10 p-6 backdrop-blur-sm sm:grid-cols-2">
             <div>
@@ -42,8 +56,9 @@ export function KontaktSection() {
             </div>
             <a
               href={`mailto:${content.contact.email}?subject=${encodeURIComponent('Booking anfragen')}`}
-              className="inline-flex items-center justify-center rounded-full bg-cream px-5 py-3 font-semibold text-sangria transition hover:bg-sand sm:col-span-2"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-cream px-8 py-4 text-base font-bold text-sangria shadow-xl transition hover:bg-sand hover:shadow-2xl hover:scale-105 sm:col-span-2"
             >
+              <span aria-hidden="true">✉</span>
               {content.contact.booking}
             </a>
           </div>
