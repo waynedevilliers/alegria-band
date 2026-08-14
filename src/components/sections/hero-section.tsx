@@ -34,8 +34,8 @@ export function HeroSection() {
           <Image
             src={heroImage}
             alt={content.hero.imageAlt}
-            width={600}
-            height={600}
+            width={450}
+            height={450}
             priority
             className="w-full h-auto object-contain"
           />
