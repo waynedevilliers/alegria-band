@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { content } from '@/data/content';
 
-const heroImage = '/images/hero/hero_image.jpeg';
+const heroImage = '/images/hero/hero-band-live.jpg';
 
 export function HeroSection() {
   return (
