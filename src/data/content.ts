@@ -85,7 +85,7 @@ export const content = {
     label: "Die Musiker",
     title: "Die Musiker",
     intro:
-      "Alegría! sind erfahrene Musiker mit jahrezehntelanger Live-Erfahrung in unterschiedlichsten Bands, u. a. den Latin-Bands 'Baila Me', 'Bailando' und 'Barboleto', der bundesweit bekannten Party-Band 'Die GRUMIS, dem Italo-Pop-Trio 'Frutti di Mare' und der Cover-Band 'Covers Finest'.",
+      "Alegría! sind erfahrene Musiker mit jahrzehntelanger Live-Erfahrung in unterschiedlichsten Bands, u. a. den Latin-Bands 'Baila Me', 'Bailando' und 'Barboleto', der bundesweit bekannten Party-Band 'Die GRUMIS, dem Italo-Pop-Trio 'Frutti di Mare' und der Cover-Band 'Covers Finest'.",
     members: [
       {
         name: "Klaus Dürner",

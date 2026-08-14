@@ -16,14 +16,17 @@ export function DieMusikiSection() {
       <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-8 justify-items-center">
         {content.musiker.members.map((member, index) => (
           <div key={member.name} className="flex flex-col items-center w-full">
-            <Image
-              src={member.image}
-              alt={member.imageAlt}
-              width={170}
-              height={238}
-              className="rounded-[1.5rem] shadow-md"
-              loading={index < 2 ? 'eager' : 'lazy'}
-            />
+            <div className="relative w-[170px] h-[238px] rounded-3xl overflow-hidden shadow-md">
+              <Image
+                src={member.image}
+                alt={member.imageAlt}
+                fill
+                className="object-cover"
+                loading={index < 2 ? 'eager' : 'lazy'}
+              />
+              {/* Warm color grade overlay for consistency */}
+              <div className="absolute inset-0 mix-blend-multiply bg-linear-to-br from-terracotta/15 via-transparent to-clay/10 pointer-events-none" />
+            </div>
             <h4 className="mt-4 font-display text-lg font-semibold text-ink text-center">{member.name}</h4>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-clay text-center">
               {member.role}
