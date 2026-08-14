@@ -13,14 +13,14 @@ export function DieMusikiSection() {
       <p className="mt-4 max-w-2xl text-lg leading-8 text-ink/75">
         {content.musiker.intro}
       </p>
-      <div className="mt-10 flex flex-wrap gap-8 justify-center">
+      <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-8 justify-items-center">
         {content.musiker.members.map((member, index) => (
-          <div key={member.name} className="flex flex-col items-center">
+          <div key={member.name} className="flex flex-col items-center w-full">
             <Image
               src={member.image}
               alt={member.imageAlt}
-              width={220}
-              height={275}
+              width={170}
+              height={238}
               className="rounded-[1.5rem] shadow-md"
               loading={index < 2 ? 'eager' : 'lazy'}
             />
