@@ -6,43 +6,37 @@ import { content } from '@/data/content';
 import { ImageWithGrade } from '@/components/image-with-grade';
 
 const galleryImages = [
-  {
-    src: '/images/foto_section/fotos.jpg',
-    alt: 'Alegría! Fotos',
-    size: 'large', // 2x2
-  },
-  {
-    src: '/images/foto_section/band_vorstellung.jpg',
-    alt: 'Alegría! Bandvorstellung',
-    size: 'medium', // 1x1
-  },
-  {
-    src: '/images/foto_section/videos.jpg',
-    alt: 'Alegría! Videos',
-    size: 'medium', // 1x1
-  },
-  {
-    src: '/images/foto_section/kontakt.jpg',
-    alt: 'Alegría! Kontakt',
-    size: 'small', // 1x1 small
-  },
-  {
-    src: '/images/foto_section/termine.jpg',
-    alt: 'Alegría! Termine',
-    size: 'small', // 1x1 small
-  },
+  { src: '/images/gallery/band-live-1.jpg', alt: 'Alegría! Band auf der Bühne mit Gitarren' },
+  { src: '/images/gallery/band-live-3.jpg', alt: 'Sänger Klaus beim Auftritt' },
+  { src: '/images/gallery/band-live-4.jpg', alt: 'Gitarrenspieler Rob im Scheinwerferlicht' },
+  { src: '/images/gallery/band-live-5.jpg', alt: 'Band gemeinsam beim Spielen' },
+  { src: '/images/gallery/band-live-7.jpg', alt: 'Cajon-Spieler Benno im Einsatz' },
+  { src: '/images/gallery/band-live-9.jpg', alt: 'Bassist Anti beim Live-Performance' },
+  { src: '/images/gallery/band-live-12.jpg', alt: 'Alegría! vollständige Band auf der Bühne' },
+  { src: '/images/gallery/band-live-13.jpg', alt: 'Live-Auftritt mit Festivallicht' },
+  { src: '/images/gallery/band-live-14.jpg', alt: 'Klaus und Rob im Duett' },
+  { src: '/images/gallery/band-live-15.jpg', alt: 'Akustik-Gitarre Nahaufnahme während des Spielens' },
+  { src: '/images/gallery/band-live-16.jpg', alt: 'Band in intensivem Moment während Performance' },
+  { src: '/images/gallery/band-live-17.jpg', alt: 'Publikum genießt Alegría! Konzert' },
+  { src: '/images/gallery/band-live-18.jpg', alt: 'Bühnenauftritt mit warmen Lichtern' },
+  { src: '/images/gallery/band-live-19.jpg', alt: 'Rhythmus-Sektion Cajon und Bass' },
+  { src: '/images/gallery/band-live-20.jpg', alt: 'Allegría! Band in voller Aktivität' },
+  { src: '/images/gallery/band-live-21.jpg', alt: 'Sänger in emotionaler Performance' },
+  { src: '/images/gallery/band-live-22.jpg', alt: 'Gitarristen synchronisiert spielend' },
+  { src: '/images/gallery/band-live-23.jpg', alt: 'Latin-Rhythmus-Sektion Cajon' },
+  { src: '/images/gallery/band-live-24.jpg', alt: 'Ensemble beim gemeinsamen Musizieren' },
+  { src: '/images/gallery/band-live-25.jpg', alt: 'Konzert-Moment mit Bühnenbeleuchtung' },
+  { src: '/images/gallery/band-live-26.jpg', alt: 'Akustisches Performance-Setup' },
+  { src: '/images/gallery/band-live-27.jpg', alt: 'Band mit Publikum im Hintergrund' },
+  { src: '/images/gallery/band-live-28.jpg', alt: 'Alegría! Live-Auftritt im Detail' },
+  { src: '/images/gallery/band-live-29.jpg', alt: 'Musiker auf der Bühne' },
+  { src: '/images/gallery/band-live-30.jpg', alt: 'Finale Augenblick eines Auftritts' },
 ];
 
 export function FotosSection() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const currentImage = selectedIndex !== null ? galleryImages[selectedIndex] : null;
-
-  const sizeClasses = {
-    large: 'md:col-span-2 md:row-span-2',
-    medium: 'md:col-span-1 md:row-span-1',
-    small: 'md:col-span-1 md:row-span-1',
-  };
 
   return (
     <section
@@ -61,12 +55,12 @@ export function FotosSection() {
 
       {/* Masonry Gallery */}
       <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 md:grid-rows-3 auto-rows-max">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-max">
           {galleryImages.map((image, index) => (
             <button
               key={index}
               onClick={() => setSelectedIndex(index)}
-              className={`group relative overflow-hidden rounded-xl shadow-soft hover:shadow-md transition-all duration-300 hover:scale-105 ${sizeClasses[image.size as keyof typeof sizeClasses]} aspect-square`}
+              className="group relative overflow-hidden rounded-xl shadow-soft hover:shadow-md transition-all duration-300 hover:scale-105 aspect-square"
             >
               <ImageWithGrade
                 src={image.src}
