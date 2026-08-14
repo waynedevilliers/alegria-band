@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { content } from '@/data/content';
 
-const heroImage = '/images/hero/hero-band-live.jpg';
+const heroImage = '/images/hero/hero_image.jpeg';
 
 export function HeroSection() {
   return (
@@ -38,14 +38,13 @@ export function HeroSection() {
 
       {/* Right Column - Image */}
       <div className="w-full px-4 sm:px-8 py-12 lg:w-1/2 lg:pl-6 lg:pr-12 lg:py-0 lg:flex lg:items-center lg:justify-center">
-        <div className="relative w-full max-w-md lg:max-w-2xl rounded-3xl overflow-hidden shadow-2xl border-4 border-sand/40 bg-cream flex items-center justify-center">
+        <div className="relative w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-sand/40 bg-cream" style={{ aspectRatio: '800/590' }}>
           <Image
             src={heroImage}
             alt={content.hero.imageAlt}
-            width={700}
-            height={700}
+            fill
             priority
-            className="w-full h-auto object-contain"
+            className="object-cover"
           />
           {/* Warm color grade overlay */}
           <div className="absolute inset-0 mix-blend-multiply bg-linear-to-br from-terracotta/20 via-transparent to-clay/15 pointer-events-none" />
