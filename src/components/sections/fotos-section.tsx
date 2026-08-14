@@ -10,7 +10,17 @@ import 'yet-another-react-lightbox/plugins/thumbnails.css';
 import { content } from '@/data/content';
 import { ImageWithGrade } from '@/components/image-with-grade';
 
-const galleryImages = [
+// Curated thumbnails shown on the page
+const displayedImages = [
+  { src: '/images/gallery/band-live-1.jpg', alt: 'Alegría! Band auf der Bühne mit Gitarren' },
+  { src: '/images/gallery/band-live-12.jpg', alt: 'Alegría! vollständige Band auf der Bühne' },
+  { src: '/images/gallery/band-live-17.jpg', alt: 'Publikum genießt Alegría! Konzert' },
+  { src: '/images/gallery/band-live-25.jpg', alt: 'Konzert-Moment mit Bühnenbeleuchtung' },
+  { src: '/images/gallery/band-live-30.jpg', alt: 'Finale Augenblick eines Auftritts' },
+];
+
+// All images available in fullscreen lightbox view
+const allGalleryImages = [
   { src: '/images/gallery/band-live-1.jpg', alt: 'Alegría! Band auf der Bühne mit Gitarren' },
   { src: '/images/gallery/band-live-3.jpg', alt: 'Sänger Klaus beim Auftritt' },
   { src: '/images/gallery/band-live-4.jpg', alt: 'Gitarrenspieler Rob im Scheinwerferlicht' },
@@ -41,13 +51,18 @@ const galleryImages = [
 export function FotosSection() {
   const [index, setIndex] = useState(-1);
 
-  // Convert gallery images to lightbox format
-  const lightboxSlides = galleryImages.map((image) => ({
+  // Convert all gallery images to lightbox format
+  const lightboxSlides = allGalleryImages.map((image) => ({
     src: image.src,
     alt: image.alt,
     width: 1200,
     height: 1200,
   }));
+
+  // Map displayed images to their index in the full gallery
+  const getFullGalleryIndex = (displayedImage: (typeof displayedImages)[0]) => {
+    return allGalleryImages.findIndex((img) => img.src === displayedImage.src);
+  };
 
   return (
     <section
@@ -64,29 +79,32 @@ export function FotosSection() {
         <p className="mt-4 text-lg text-text-muted">{content.photos.intro}</p>
       </div>
 
-      {/* Gallery Grid */}
+      {/* Gallery Grid - Curated Thumbnails */}
       <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-max">
-          {galleryImages.map((image, imgIndex) => (
-            <button
-              key={imgIndex}
-              onClick={() => setIndex(imgIndex)}
-              className="group relative overflow-hidden rounded-xl shadow-soft hover:shadow-md transition-all duration-300 hover:scale-105 aspect-square focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-              aria-label={`Open ${image.alt}`}
-            >
-              <ImageWithGrade
-                src={image.src}
-                alt={image.alt}
-                fill
-                className="h-full w-full"
-                grade
-              />
-            </button>
-          ))}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 auto-rows-max">
+          {displayedImages.map((image) => {
+            const fullGalleryIndex = getFullGalleryIndex(image);
+            return (
+              <button
+                key={image.src}
+                onClick={() => setIndex(fullGalleryIndex)}
+                className="group relative overflow-hidden rounded-xl shadow-soft hover:shadow-md transition-all duration-300 hover:scale-105 aspect-square focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                aria-label={`Open ${image.alt}`}
+              >
+                <ImageWithGrade
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className="h-full w-full"
+                  grade
+                />
+              </button>
+            );
+          })}
         </div>
       </div>
 
-      {/* Yet Another React Lightbox */}
+      {/* Yet Another React Lightbox - All 25 images available */}
       <Lightbox
         slides={lightboxSlides}
         open={index >= 0}
