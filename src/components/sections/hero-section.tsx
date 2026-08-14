@@ -7,7 +7,7 @@ export function HeroSection() {
   return (
     <section id="hero" className="relative bg-cream pt-12 sm:pt-16 lg:pt-0 lg:min-h-svh lg:flex lg:items-center">
       {/* Left Column - Text */}
-      <div className="w-full px-4 sm:px-8 py-16 sm:py-20 lg:w-1/2 lg:pl-12 lg:pr-8 lg:py-0 lg:flex lg:items-center">
+      <div className="w-full px-4 sm:px-8 py-16 sm:py-20 lg:w-1/2 lg:pl-12 lg:pr-8 lg:py-0 lg:flex lg:items-center lg:justify-end">
         <div className="max-w-lg">
           <p className="mb-4 inline-flex rounded-full border border-sangria/30 bg-sangria/5 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.35em] text-sangria">
             Nordheim am Main, Germany
