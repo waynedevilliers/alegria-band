@@ -30,12 +30,12 @@ export function HeroSection() {
 
       {/* Right Column - Image */}
       <div className="relative lg:w-1/2 lg:min-h-svh flex items-center justify-start lg:pl-12 px-4 sm:px-8 py-12 lg:py-0">
-        <div className="relative w-full max-w-md lg:max-w-lg rounded-3xl overflow-hidden shadow-2xl border-4 border-sand/40 bg-cream flex items-center justify-center">
+        <div className="relative w-full max-w-md lg:max-w-2xl rounded-3xl overflow-hidden shadow-2xl border-4 border-sand/40 bg-cream flex items-center justify-center">
           <Image
             src={heroImage}
             alt={content.hero.imageAlt}
-            width={600}
-            height={600}
+            width={700}
+            height={700}
             priority
             className="w-full h-auto object-contain"
           />
