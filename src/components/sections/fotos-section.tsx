@@ -2,6 +2,11 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
+import Lightbox from 'yet-another-react-lightbox';
+import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
+import Counter from 'yet-another-react-lightbox/plugins/counter';
+import 'yet-another-react-lightbox/styles.css';
+import 'yet-another-react-lightbox/plugins/thumbnails.css';
 import { content } from '@/data/content';
 import { ImageWithGrade } from '@/components/image-with-grade';
 
@@ -34,9 +39,15 @@ const galleryImages = [
 ];
 
 export function FotosSection() {
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [index, setIndex] = useState(-1);
 
-  const currentImage = selectedIndex !== null ? galleryImages[selectedIndex] : null;
+  // Convert gallery images to lightbox format
+  const lightboxSlides = galleryImages.map((image) => ({
+    src: image.src,
+    alt: image.alt,
+    width: 1200,
+    height: 1200,
+  }));
 
   return (
     <section
@@ -53,14 +64,15 @@ export function FotosSection() {
         <p className="mt-4 text-lg text-text-muted">{content.photos.intro}</p>
       </div>
 
-      {/* Masonry Gallery */}
+      {/* Gallery Grid */}
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-max">
-          {galleryImages.map((image, index) => (
+          {galleryImages.map((image, imgIndex) => (
             <button
-              key={index}
-              onClick={() => setSelectedIndex(index)}
-              className="group relative overflow-hidden rounded-xl shadow-soft hover:shadow-md transition-all duration-300 hover:scale-105 aspect-square"
+              key={imgIndex}
+              onClick={() => setIndex(imgIndex)}
+              className="group relative overflow-hidden rounded-xl shadow-soft hover:shadow-md transition-all duration-300 hover:scale-105 aspect-square focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              aria-label={`Open ${image.alt}`}
             >
               <ImageWithGrade
                 src={image.src}
@@ -74,55 +86,27 @@ export function FotosSection() {
         </div>
       </div>
 
-      {/* Lightbox Modal */}
-      {currentImage && selectedIndex !== null && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-ink/80 p-4 backdrop-blur-md"
-          onClick={() => setSelectedIndex(null)}
-        >
-          <div
-            className="relative max-w-4xl w-full bg-surface rounded-2xl overflow-hidden shadow-glow"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="relative aspect-video bg-ink/10">
-              <Image
-                src={currentImage.src}
-                alt={currentImage.alt}
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
-
-            <div className="flex items-center justify-between gap-4 border-t border-surface-alt p-6">
-              <p className="text-sm font-medium text-text-muted">{currentImage.alt}</p>
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => setSelectedIndex((selectedIndex - 1 + galleryImages.length) % galleryImages.length)}
-                  className="rounded-lg border border-surface-alt px-3 py-2 text-sm font-medium text-text hover:bg-surface-alt transition"
-                >
-                  ← Prev
-                </button>
-                <span className="text-sm text-text-muted">
-                  {selectedIndex + 1} / {galleryImages.length}
-                </span>
-                <button
-                  onClick={() => setSelectedIndex((selectedIndex + 1) % galleryImages.length)}
-                  className="rounded-lg border border-surface-alt px-3 py-2 text-sm font-medium text-text hover:bg-surface-alt transition"
-                >
-                  Next →
-                </button>
-                <button
-                  onClick={() => setSelectedIndex(null)}
-                  className="ml-4 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-text-light hover:bg-primary/90 transition"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Yet Another React Lightbox */}
+      <Lightbox
+        slides={lightboxSlides}
+        open={index >= 0}
+        index={index}
+        close={() => setIndex(-1)}
+        on={{
+          view: ({ index: currentIndex }) => setIndex(currentIndex),
+        }}
+        plugins={[Thumbnails, Counter]}
+        thumbnails={{
+          position: 'bottom',
+          width: 100,
+          height: 100,
+          border: 1,
+          borderColor: 'rgba(255, 255, 255, 0.2)',
+          gap: 4,
+          padding: 4,
+        }}
+        counter={{ container: { style: { top: 0, left: 0 } } }}
+      />
     </section>
   );
 }
