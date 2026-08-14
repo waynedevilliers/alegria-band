@@ -5,10 +5,10 @@ const heroImage = '/images/hero/hero-band-live.jpg';
 
 export function HeroSection() {
   return (
-    <section id="hero" className="relative bg-cream pt-12 sm:pt-16 lg:pt-0 lg:min-h-svh lg:flex lg:items-center lg:justify-center lg:px-6">
+    <section id="hero" className="relative bg-cream pt-12 sm:pt-16 lg:pt-0 lg:min-h-svh lg:flex lg:items-center">
       {/* Left Column - Text */}
-      <div className="lg:w-1/2 lg:flex lg:items-center lg:justify-center lg:pr-6">
-        <div className="px-4 sm:px-8 py-16 sm:py-20 lg:py-0 lg:px-0 max-w-lg">
+      <div className="w-full px-4 sm:px-8 py-16 sm:py-20 lg:w-1/2 lg:pl-12 lg:pr-8 lg:py-0 lg:flex lg:items-center">
+        <div className="max-w-lg">
           <p className="mb-4 inline-flex rounded-full border border-sangria/30 bg-sangria/5 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.35em] text-sangria">
             Nordheim am Main, Germany
           </p>
@@ -29,7 +29,7 @@ export function HeroSection() {
       </div>
 
       {/* Right Column - Image */}
-      <div className="relative lg:w-1/2 lg:min-h-svh flex items-center justify-start lg:pl-6 px-4 sm:px-8 py-12 lg:py-0">
+      <div className="w-full px-4 sm:px-8 py-12 lg:w-1/2 lg:px-12 lg:py-0 lg:flex lg:items-center lg:justify-center">
         <div className="relative w-full max-w-md lg:max-w-2xl rounded-3xl overflow-hidden shadow-2xl border-4 border-sand/40 bg-cream flex items-center justify-center">
           <Image
             src={heroImage}
