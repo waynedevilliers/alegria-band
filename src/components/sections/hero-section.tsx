@@ -5,7 +5,7 @@ const heroImage = '/images/hero/hero_image.jpeg';
 
 export function HeroSection() {
   return (
-    <section id="hero" className="relative bg-cream px-4 sm:px-8 py-12 sm:py-16 lg:py-20 lg:min-h-svh lg:flex lg:items-center lg:justify-center">
+    <section id="hero" className="relative bg-cream px-4 sm:px-8 pt-0 pb-12 sm:pb-16 lg:pb-20 lg:min-h-svh lg:flex lg:items-center lg:justify-center">
       <style>{`
         @keyframes heroScaleIn { from { opacity: 0; transform: scale(1.02); } to { opacity: 1; transform: scale(1); } }
         .hero-image-card { animation: heroScaleIn 0.8s ease-out forwards; }
