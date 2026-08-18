@@ -57,16 +57,16 @@ export function FotosSection() {
   return (
     <section
       id="fotos"
-      className="scroll-mt-24 space-y-8 bg-surface px-4 py-20 sm:px-6 lg:px-8"
+      className="scroll-mt-24 space-y-8 bg-cream px-4 py-20 sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
-        <p className="text-sm font-semibold uppercase tracking-[0.35em] text-primary/75">
+        <p className="text-sm font-semibold uppercase tracking-[0.35em] text-sangria/75">
           {content.photos.label}
         </p>
         <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
           {content.photos.title}
         </h2>
-        <p className="mt-4 text-lg text-text-muted">{content.photos.intro}</p>
+        <p className="mt-4 text-lg text-ink/75">{content.photos.intro}</p>
       </div>
 
       {/* Masonry Gallery */}
