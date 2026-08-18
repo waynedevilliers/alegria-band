@@ -14,7 +14,7 @@ export function HeroSection() {
 
       <div className="hero-image-card relative mx-auto" style={{ width: '90vw', aspectRatio: '800/590', maxWidth: '90vw', maxHeight: '80vh' }}>
         <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl border-4 border-sand/40 bg-cream">
-          <Image src={heroImage} alt={content.hero.imageAlt} fill priority className="object-cover" />
+          <Image src={heroImage} alt={content.hero.imageAlt} fill priority className="object-cover object-top" />
           <div className="absolute inset-0 mix-blend-multiply bg-linear-to-br from-terracotta/20 via-transparent to-clay/15 pointer-events-none" />
 
           {/* Gradient scrim from bottom-left */}
