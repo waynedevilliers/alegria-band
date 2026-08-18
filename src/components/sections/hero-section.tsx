@@ -6,12 +6,6 @@ const heroImage = '/images/hero/hero_image.jpeg';
 export function HeroSection() {
   return (
     <section id="hero" className="relative bg-cream px-4 sm:px-8 pt-0 pb-12 sm:pb-16 lg:pb-20 lg:min-h-svh lg:flex lg:items-center lg:justify-center">
-      <style>{`
-        @keyframes heroScaleIn { from { opacity: 0; transform: scale(1.02); } to { opacity: 1; transform: scale(1); } }
-        .hero-image-card { animation: heroScaleIn 0.8s ease-out forwards; }
-        @media (prefers-reduced-motion: reduce) { .hero-image-card { animation: none; opacity: 1; transform: scale(1); } }
-      `}</style>
-
       <div className="hero-image-card relative mx-auto" style={{ width: '90vw', aspectRatio: '800/590', maxWidth: '90vw', maxHeight: '80vh' }}>
         <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl border-4 border-sand/40 bg-cream">
           <Image src={heroImage} alt={content.hero.imageAlt} fill priority className="object-contain" />
