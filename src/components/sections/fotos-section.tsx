@@ -76,7 +76,7 @@ export function FotosSection() {
             <button
               key={imgIndex}
               onClick={() => setIndex(imgIndex)}
-              className={`group relative overflow-hidden rounded-xl shadow-soft hover:shadow-md transition-all duration-300 hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${sizeClasses[image.size as keyof typeof sizeClasses]} aspect-square`}
+              className={`group relative overflow-hidden rounded-xl shadow-soft hover:shadow-md transition-all duration-300 hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-sangria focus-visible:ring-offset-2 ${sizeClasses[image.size as keyof typeof sizeClasses]} aspect-square`}
               aria-label={`Open ${image.alt}`}
             >
               <ImageWithGrade
