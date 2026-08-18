@@ -13,7 +13,7 @@ export function DieMusikiSection() {
       <p className="mt-4 max-w-2xl text-lg leading-8 text-ink/75">
         {content.musiker.intro}
       </p>
-      <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-6 justify-items-center">
+      <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 justify-items-center">
         {content.musiker.members.map((member, index) => (
           <div key={member.name} className="flex flex-col items-center w-full">
             <div className="relative w-32 h-44 rounded-lg overflow-hidden shadow-md">
