@@ -5,7 +5,7 @@ export function VideosSection() {
   return (
     <section
       id="videos"
-      className="scroll-mt-24 space-y-8 bg-sand/50 px-4 py-20 sm:px-6 lg:px-8"
+      className="scroll-mt-24 space-y-8 bg-sand/50 px-4 py-20 pt-12 sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
         <p className="text-sm font-semibold uppercase tracking-[0.35em] text-sangria/75">
