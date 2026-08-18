@@ -17,6 +17,7 @@ export function KontaktSection() {
               <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight sm:text-5xl">
                 {content.contact.title}
               </h2>
+              <p className="mt-4 text-lg text-cream/85">{content.contact.message}</p>
             </div>
             <div className="flex flex-col items-center lg:items-start gap-3">
               <p className="text-lg text-cream/85">{content.contact.person}</p>
