@@ -10,33 +10,7 @@ import 'yet-another-react-lightbox/plugins/thumbnails.css';
 import { content } from '@/data/content';
 import { ImageWithGrade } from '@/components/image-with-grade';
 
-const galleryImages = [
-  {
-    src: '/images/foto_section/fotos.jpg',
-    alt: 'Alegría! Fotos',
-    size: 'large',
-  },
-  {
-    src: '/images/foto_section/band_vorstellung.jpg',
-    alt: 'Alegría! Bandvorstellung',
-    size: 'medium',
-  },
-  {
-    src: '/images/foto_section/videos.jpg',
-    alt: 'Alegría! Videos',
-    size: 'medium',
-  },
-  {
-    src: '/images/foto_section/kontakt.jpg',
-    alt: 'Alegría! Kontakt',
-    size: 'small',
-  },
-  {
-    src: '/images/foto_section/termine.jpg',
-    alt: 'Alegría! Termine',
-    size: 'small',
-  },
-];
+const galleryImages = content.photos.gallery;
 
 export function FotosSection() {
   const [index, setIndex] = useState(-1);

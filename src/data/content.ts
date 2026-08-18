@@ -276,6 +276,33 @@ export const content = {
     label: "Fotos",
     title: "Fotos",
     intro: "Bühne, Stimmung und Publikumsnähe aus dem Bandalltag.",
+    gallery: [
+      {
+        src: '/images/foto_section/fotos.jpg',
+        alt: 'Alegría! performing live with acoustic guitars and cajon at outdoor festival event',
+        size: 'large',
+      },
+      {
+        src: '/images/foto_section/band_vorstellung.jpg',
+        alt: 'Alegría! band members posed together for group portrait',
+        size: 'medium',
+      },
+      {
+        src: '/images/foto_section/videos.jpg',
+        alt: 'Alegría! live performance on stage with professional lighting and sound equipment',
+        size: 'medium',
+      },
+      {
+        src: '/images/foto_section/kontakt.jpg',
+        alt: 'Alegría! band members socializing and enjoying time together',
+        size: 'small',
+      },
+      {
+        src: '/images/foto_section/termine.jpg',
+        alt: 'Alegría! performing energetically at an evening concert venue',
+        size: 'small',
+      },
+    ],
   },
   videos: {
     label: "Videos / Hörproben",
