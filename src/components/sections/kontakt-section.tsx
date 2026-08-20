@@ -8,7 +8,7 @@ export function KontaktSection() {
       className="scroll-mt-24 bg-cream px-4 py-20 sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-8 rounded-[2rem] bg-sangria p-8 text-cream shadow-glow lg:grid-cols-[0.95fr_1.05fr] lg:items-start sm:p-10">
+        <div className="grid gap-8 rounded-[2rem] bg-sangria p-8 text-cream shadow-glow lg:grid-cols-[0.95fr_1.05fr] lg:items-end sm:p-10">
           <div className="flex flex-col items-center lg:items-start gap-6 lg:gap-8">
             <div>
               <h2 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">
