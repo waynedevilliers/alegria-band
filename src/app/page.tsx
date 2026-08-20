@@ -8,11 +8,13 @@ import { TermineSection } from '@/components/sections/termine-section';
 import { FotosSection } from '@/components/sections/fotos-section';
 import { VideosSection } from '@/components/sections/videos-section';
 import { KontaktSection } from '@/components/sections/kontakt-section';
+import { SectionDivider } from '@/components/section-divider';
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-cream text-ink">
       <HeroSection />
+      <SectionDivider color="rgb(245, 232, 213)" className="-mb-0.5" />
 
       <section
         id="bandvorstellung"
@@ -22,10 +24,17 @@ export default function Home() {
         <RepertoireSection />
         <DieMusikiSection />
       </section>
+      <SectionDivider color="rgb(234, 215, 193)" className="-mb-0.5" />
 
       <TermineSection />
+      <SectionDivider color="rgb(245, 232, 213)" className="-mb-0.5" />
+
       <FotosSection />
+      <SectionDivider color="rgb(229, 215, 193)" className="-mb-0.5" />
+
       <VideosSection />
+      <SectionDivider color="rgb(245, 232, 213)" className="-mb-0.5" />
+
       <KontaktSection />
 
       <footer className="border-t border-sand/70 bg-cream px-4 py-8 sm:px-6 lg:px-8">
