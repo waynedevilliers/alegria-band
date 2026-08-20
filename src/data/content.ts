@@ -313,7 +313,7 @@ export const content = {
   contact: {
     label: "Kontakt",
     title: "Kontakt",
-    message: "Wir freuen uns auf Ihre Nachricht und freuen uns auf Ihre Anfrage!",
+    message: "Wir freuen uns auf Ihre Nachricht – ob Terminanfrage oder einfach nur, um Hallo zu sagen!",
     person: 'Gerd "Benno" Hofmann',
     booking: "Booking anfragen",
     emailLabel: "E-Mail",

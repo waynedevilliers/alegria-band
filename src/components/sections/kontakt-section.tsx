@@ -19,15 +19,15 @@ export function KontaktSection() {
               </h2>
               <p className="mt-4 text-lg text-cream/85">{content.contact.message}</p>
             </div>
-            <div className="flex flex-col items-center lg:items-start gap-3">
-              <p className="text-lg text-cream/85">{content.contact.person}</p>
-              <div className="w-24">
+            <div className="flex flex-col items-center lg:items-start gap-4 mt-6">
+              <p className="text-lg font-semibold text-cream">{content.contact.person}</p>
+              <div className="w-40 rounded-lg overflow-hidden shadow-lg ring-2 ring-cream/20">
                 <Image
                   src="/images/band_members/Gerd_Benno_Hofmann.jpg"
                   alt="Gerd 'Benno' Hofmann"
-                  width={96}
-                  height={134}
-                  className="w-full h-auto rounded-lg shadow-md"
+                  width={160}
+                  height={224}
+                  className="w-full h-auto"
                 />
               </div>
             </div>
@@ -57,7 +57,7 @@ export function KontaktSection() {
             </div>
             <a
               href={`mailto:${content.contact.email}?subject=${encodeURIComponent('Booking anfragen')}`}
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-cream px-8 py-4 text-base font-bold text-sangria shadow-xl transition hover:bg-sand hover:shadow-2xl hover:scale-105 sm:col-span-2"
+              className="inline-flex items-center justify-center gap-3 rounded-full bg-cream px-10 py-5 text-lg font-bold text-sangria shadow-2xl transition duration-300 hover:bg-sand hover:shadow-glow hover:scale-105 sm:col-span-2 ring-2 ring-cream/30"
             >
               <span aria-hidden="true">✉</span>
               {content.contact.booking}
