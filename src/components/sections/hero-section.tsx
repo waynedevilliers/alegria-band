@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { content } from '@/data/content';
 
-const heroImage = '/images/hero/hero_image.jpeg';
+const heroImage = '/images/Alegria_22.05.2022(Matt_Keyworth)/Alegria_220622_00017.jpg';
 
 export function HeroSection() {
   return (
