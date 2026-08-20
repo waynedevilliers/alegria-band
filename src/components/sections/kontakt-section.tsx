@@ -9,7 +9,7 @@ export function KontaktSection() {
     >
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-8 rounded-[2rem] bg-sangria p-8 text-cream shadow-glow lg:grid-cols-[0.95fr_1.05fr] lg:items-center sm:p-10">
-          <div className="flex flex-col items-center lg:items-start gap-4">
+          <div className="flex flex-col items-center lg:items-start gap-6 lg:gap-8">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cream/70">
                 {content.contact.label}
@@ -19,16 +19,22 @@ export function KontaktSection() {
               </h2>
               <p className="mt-4 text-lg text-cream/85">{content.contact.message}</p>
             </div>
-            <div className="flex flex-col items-center lg:items-start gap-4 mt-6">
+            <div className="flex flex-col items-center lg:items-start gap-4 w-full">
               <p className="text-lg font-semibold text-cream">{content.contact.person}</p>
-              <div className="w-40 rounded-lg overflow-hidden shadow-lg ring-2 ring-cream/20">
-                <Image
-                  src="/images/band_members/Gerd_Benno_Hofmann.jpg"
-                  alt="Gerd 'Benno' Hofmann"
-                  width={160}
-                  height={224}
-                  className="w-full h-auto"
-                />
+              {/* Photo with subtle warm glow accent */}
+              <div className="relative w-48 h-64">
+                {/* Warm glow backdrop */}
+                <div className="absolute -inset-2 rounded-lg opacity-20 blur-xl" style={{ background: 'linear-gradient(135deg, #c96d45 0%, #b4573f 100%)' }} />
+                {/* Photo container */}
+                <div className="relative rounded-lg overflow-hidden shadow-lg ring-2 ring-cream/20 bg-cream/5">
+                  <Image
+                    src="/images/band_members/Gerd_Benno_Hofmann.jpg"
+                    alt="Gerd 'Benno' Hofmann"
+                    width={192}
+                    height={256}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
