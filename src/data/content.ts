@@ -276,6 +276,13 @@ export const content = {
     label: "Fotos",
     title: "Fotos",
     intro: "Bühne, Stimmung und Publikumsnähe aus dem Bandalltag.",
+    curated: [
+      { src: '/images/Alegria_22.05.2022(Matt_Keyworth)/Alegria_220622_00017.jpg', alt: 'Alegría! band performing live together with full energy', size: 'large', galleryIndex: 0 },
+      { src: '/images/Alegria_22.05.2022(Matt_Keyworth)/Alegria_220622_00016.jpg', alt: 'Alegría! band in perfect harmony', size: 'large', galleryIndex: 4 },
+      { src: '/images/Alegria_22.05.2022(Matt_Keyworth)/Alegria_220622_00026.jpg', alt: 'Alegría! live concert performance', size: 'large', galleryIndex: 13 },
+      { src: '/images/Alegria_22.05.2022(Matt_Keyworth)/Alegria_220622_0001.jpg', alt: 'Alegría! performance moment at venue', size: 'large', galleryIndex: 18 },
+      { src: '/images/Alegria_22.05.2022(Matt_Keyworth)/Alegria_220622_00012.jpg', alt: 'Alegría! band performing live', size: 'large', galleryIndex: 24 },
+    ],
     gallery: [
       { src: '/images/Alegria_22.05.2022(Matt_Keyworth)/Alegria_220622_00017.jpg', alt: 'Alegría! band performing live together with full energy', size: 'large' },
       { src: '/images/Alegria_22.05.2022(Matt_Keyworth)/Alegria_220622_00013.jpg', alt: 'Alegría! guitarist in performance', size: 'medium' },

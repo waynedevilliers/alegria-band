@@ -10,12 +10,13 @@ import 'yet-another-react-lightbox/plugins/thumbnails.css';
 import { content } from '@/data/content';
 import { ImageWithGrade } from '@/components/image-with-grade';
 
-const galleryImages = content.photos.gallery;
+const allPhotos = content.photos.gallery;
+const curatedPhotos = content.photos.curated;
 
 export function FotosSection() {
   const [index, setIndex] = useState(-1);
 
-  const lightboxSlides = galleryImages.map((image) => ({
+  const lightboxSlides = allPhotos.map((image) => ({
     src: image.src,
     alt: image.alt,
     width: 1200,
@@ -26,6 +27,10 @@ export function FotosSection() {
     large: 'md:col-span-2 md:row-span-2',
     medium: 'md:col-span-1 md:row-span-1',
     small: 'md:col-span-1 md:row-span-1',
+  };
+
+  const handleCuratedClick = (galleryIndex: number) => {
+    setIndex(galleryIndex);
   };
 
   return (
@@ -43,13 +48,13 @@ export function FotosSection() {
         <p className="mt-4 text-lg text-ink/75">{content.photos.intro}</p>
       </div>
 
-      {/* Masonry Gallery */}
+      {/* Curated Masonry Grid */}
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 auto-rows-max">
-          {galleryImages.map((image, imgIndex) => (
+          {curatedPhotos.map((image) => (
             <button
-              key={imgIndex}
-              onClick={() => setIndex(imgIndex)}
+              key={image.galleryIndex}
+              onClick={() => handleCuratedClick(image.galleryIndex)}
               className={`group relative overflow-hidden rounded-xl shadow-soft hover:shadow-md transition-all duration-300 hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-sangria focus-visible:ring-offset-2 ${sizeClasses[image.size as keyof typeof sizeClasses]} aspect-square`}
               aria-label={`Open ${image.alt}`}
             >
