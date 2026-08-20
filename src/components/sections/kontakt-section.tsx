@@ -19,7 +19,7 @@ export function KontaktSection() {
             <div className="flex flex-col items-center lg:items-start gap-4 w-full">
               <p className="text-lg font-semibold text-cream">{content.contact.person}</p>
               {/* Photo with subtle warm glow accent */}
-              <div className="relative w-48 h-64">
+              <div className="relative w-32 h-44">
                 {/* Warm glow backdrop */}
                 <div className="absolute -inset-2 rounded-lg opacity-20 blur-xl" style={{ background: 'linear-gradient(135deg, #c96d45 0%, #b4573f 100%)' }} />
                 {/* Photo container */}
@@ -27,8 +27,8 @@ export function KontaktSection() {
                   <Image
                     src="/images/band_members/Gerd_Benno_Hofmann.jpg"
                     alt="Gerd 'Benno' Hofmann"
-                    width={192}
-                    height={256}
+                    width={128}
+                    height={176}
                     className="w-full h-full object-cover"
                   />
                 </div>
