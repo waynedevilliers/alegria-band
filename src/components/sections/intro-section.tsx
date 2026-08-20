@@ -4,7 +4,7 @@ import { content } from '@/data/content';
 export function IntroSection() {
   return (
     <div className="mx-auto max-w-7xl">
-      <div className="rounded-[2rem] bg-cream p-8 shadow-soft sm:p-10 border-l-4 border-sangria">
+      <div className="rounded-[2rem] bg-cream p-8 shadow-soft sm:p-10">
         <p className="text-sm font-semibold uppercase tracking-[0.35em] text-sangria/75">
           {content.bandvorstellung.label}
         </p>
@@ -14,12 +14,12 @@ export function IntroSection() {
 
         <div className="mt-10 grid gap-8 lg:grid-cols-2 lg:items-center">
           {/* Photo */}
-          <div className="relative aspect-video overflow-hidden rounded-xl shadow-md">
+          <div className="relative aspect-video overflow-hidden rounded-lg shadow-md">
             <Image
               src="/images/hero/hero_image.jpeg"
               alt="Alegría! band performing live on stage"
               fill
-              className="object-contain"
+              className="object-cover"
               priority
             />
           </div>
