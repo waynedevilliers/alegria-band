@@ -11,10 +11,7 @@ export function KontaktSection() {
         <div className="grid gap-8 rounded-[2rem] bg-sangria p-8 text-cream shadow-glow lg:grid-cols-[0.95fr_1.05fr] lg:items-center sm:p-10">
           <div className="flex flex-col items-center lg:items-start gap-6 lg:gap-8">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cream/70">
-                {content.contact.label}
-              </p>
-              <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+              <h2 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">
                 {content.contact.title}
               </h2>
               <p className="mt-4 text-lg text-cream/85">{content.contact.message}</p>
