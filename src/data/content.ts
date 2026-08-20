@@ -278,28 +278,28 @@ export const content = {
     intro: "Bühne, Stimmung und Publikumsnähe aus dem Bandalltag.",
     gallery: [
       {
-        src: '/images/foto_section/fotos.jpg',
-        alt: 'Alegría! performing live with acoustic guitars and cajon at outdoor festival event',
+        src: '/images/Alegria_22.05.2022(Matt_Keyworth)/Alegria_220622_00017.jpg',
+        alt: 'Alegría! band performing live together with full energy and precision',
         size: 'large',
       },
       {
-        src: '/images/foto_section/band_vorstellung.jpg',
-        alt: 'Alegría! band members posed together for group portrait',
+        src: '/images/Alegria_22.05.2022(Matt_Keyworth)/Alegria_220622_00013.jpg',
+        alt: 'Alegría! band member performing with acoustic guitar on stage',
         size: 'medium',
       },
       {
-        src: '/images/foto_section/videos.jpg',
-        alt: 'Alegría! live performance on stage with professional lighting and sound equipment',
+        src: '/images/Alegria_22.05.2022(Matt_Keyworth)/Alegria_220622_00018.jpg',
+        alt: 'Alegría! live performance capturing the band in action with guitars and cajon',
         size: 'medium',
       },
       {
-        src: '/images/foto_section/kontakt.jpg',
-        alt: 'Alegría! band members socializing and enjoying time together',
+        src: '/images/Alegria_22.05.2022(Matt_Keyworth)/Alegria_220622_00020.jpg',
+        alt: 'Alegría! close-up performance moment showing musician engagement',
         size: 'small',
       },
       {
-        src: '/images/foto_section/termine.jpg',
-        alt: 'Alegría! performing energetically at an evening concert venue',
+        src: '/images/Alegria_22.05.2022(Matt_Keyworth)/Alegria_220622_00021.jpg',
+        alt: 'Alegría! stage performance with full band coordination',
         size: 'small',
       },
     ],
