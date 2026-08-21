@@ -6,7 +6,8 @@ const heroImage = '/images/Alegria_22.05.2022(Matt_Keyworth)/Alegria_220622_0001
 export function HeroSection() {
   return (
     <section id="hero" className="relative bg-cream px-4 sm:px-8 pt-0 pb-12 sm:pb-16 lg:pb-20 lg:min-h-svh lg:flex lg:items-center lg:justify-center">
-      <div className="hero-image-card relative mx-auto" style={{ width: '90vw', aspectRatio: '800/590', maxWidth: '90vw', maxHeight: '80vh' }}>
+      {/* Desktop: Image with overlay (lg and above) */}
+      <div className="hidden lg:block hero-image-card relative mx-auto" style={{ width: '90vw', aspectRatio: '800/590', maxWidth: '90vw', maxHeight: '80vh' }}>
         <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl border-4 border-sand/40 bg-cream">
           <Image src={heroImage} alt={content.hero.imageAlt} fill priority className="object-contain" />
           <div className="absolute inset-0 mix-blend-multiply bg-linear-to-br from-terracotta/20 via-transparent to-clay/15 pointer-events-none" />
@@ -40,6 +41,44 @@ export function HeroSection() {
                 <span aria-hidden="true">↓</span>
               </a>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile: Image only, then text below in normal flow (below lg) */}
+      <div className="lg:hidden mx-auto w-full">
+        <div className="hero-image-card relative mx-auto" style={{ width: '100%', aspectRatio: '800/590' }}>
+          <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl border-4 border-sand/40 bg-cream">
+            <Image src={heroImage} alt={content.hero.imageAlt} fill priority className="object-contain" />
+            <div className="absolute inset-0 mix-blend-multiply bg-linear-to-br from-terracotta/20 via-transparent to-clay/15 pointer-events-none" />
+          </div>
+        </div>
+
+        {/* Text below image on mobile */}
+        <div className="mt-8 space-y-4">
+          <p className="inline-flex rounded-full border border-sangria/30 bg-sangria/10 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.35em] text-sangria/75 w-fit">
+            Nordheim am Main, Germany
+          </p>
+          <h1 className="font-display text-5xl sm:text-6xl font-semibold tracking-tight text-ink leading-tight">
+            Alegría!
+          </h1>
+          <p className="text-base sm:text-lg leading-relaxed text-ink/75 max-w-md">
+            {content.hero.tagline}
+          </p>
+          <div className="pt-4 flex flex-wrap gap-3 sm:gap-4">
+            <a
+              href="#kontakt"
+              className="inline-flex items-center gap-2 rounded-full bg-sangria px-6 sm:px-8 py-3 sm:py-4 font-semibold text-white shadow-xl transition hover:bg-sangria/90 hover:shadow-2xl hover:scale-105"
+            >
+              Jetzt buchen
+            </a>
+            <a
+              href="#bandvorstellung"
+              className="inline-flex items-center gap-3 rounded-full border-2 border-sangria px-6 sm:px-8 py-3 sm:py-4 font-semibold text-sangria transition hover:bg-sangria/10"
+            >
+              {content.hero.scrollLabel}
+              <span aria-hidden="true">↓</span>
+            </a>
           </div>
         </div>
       </div>
