@@ -46,16 +46,16 @@ export function HeroSection() {
       </div>
 
       {/* Mobile: Image only, then text below in normal flow (below lg) */}
-      <div className="lg:hidden mx-auto w-full">
-        <div className="hero-image-card relative mx-auto" style={{ width: '100%', aspectRatio: '800/590' }}>
-          <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl border-4 border-sand/40 bg-cream">
+      <div className="lg:hidden mx-auto w-full px-0 sm:px-4">
+        <div className="hero-image-card relative -mx-4 sm:mx-auto" style={{ width: 'calc(100% + 2rem)', aspectRatio: '800/590', maxWidth: 'calc(100% + 2rem)' }}>
+          <div className="relative w-full h-full rounded-b-2xl sm:rounded-3xl overflow-hidden shadow-2xl sm:border-4 sm:border-sand/40 bg-cream">
             <Image src={heroImage} alt={content.hero.imageAlt} fill priority className="object-contain" />
             <div className="absolute inset-0 mix-blend-multiply bg-linear-to-br from-terracotta/20 via-transparent to-clay/15 pointer-events-none" />
           </div>
         </div>
 
         {/* Text below image on mobile */}
-        <div className="mt-8 space-y-4">
+        <div className="px-4 sm:px-0 mt-8 space-y-4">
           <p className="inline-flex rounded-full border border-sangria/30 bg-sangria/10 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.35em] text-sangria/75 w-fit">
             Nordheim am Main, Germany
           </p>
