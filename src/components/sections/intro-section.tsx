@@ -11,7 +11,7 @@ export function IntroSection() {
 
         <div className="mt-10 grid gap-8 lg:grid-cols-2 lg:items-center">
           {/* Photo */}
-          <div className="relative overflow-hidden rounded-lg shadow-md" style={{ aspectRatio: '800/590' }}>
+          <div className="relative overflow-hidden rounded-lg shadow-md ring-2 ring-sangria ring-offset-4 ring-offset-cream" style={{ aspectRatio: '800/590' }}>
             <Image
               src="/images/hero/hero_image.jpeg"
               alt="Alegría! band performing live on stage"
