@@ -4,14 +4,14 @@ import { content } from '@/data/content';
 export function IntroSection() {
   return (
     <div className="mx-auto max-w-7xl">
-      <div className="rounded-[2rem] bg-cream p-8 shadow-soft sm:p-10">
+      <div className="rounded-[2rem] bg-cream p-8 shadow-soft sm:p-10 ring-2 ring-sangria ring-offset-4 ring-offset-cream">
         <h2 className="font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
           {content.bandvorstellung.title}
         </h2>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-2 lg:items-center">
           {/* Photo */}
-          <div className="relative overflow-hidden rounded-lg shadow-md ring-2 ring-sangria ring-offset-4 ring-offset-cream" style={{ aspectRatio: '800/590' }}>
+          <div className="relative overflow-hidden rounded-lg shadow-md" style={{ aspectRatio: '800/590' }}>
             <Image
               src="/images/hero/hero_image.jpeg"
               alt="Alegría! band performing live on stage"
