@@ -26,7 +26,7 @@ export function KontaktSection() {
                   {/* Warm glow backdrop */}
                   <div className="absolute -inset-2 rounded-lg opacity-20 blur-xl" style={{ background: 'linear-gradient(135deg, #c96d45 0%, #b4573f 100%)' }} />
                   {/* Photo container */}
-                  <div className="relative rounded-lg overflow-hidden shadow-lg ring-2 ring-cream ring-offset-4 ring-offset-sangria bg-cream/5">
+                  <div className="relative rounded-lg overflow-hidden shadow-lg ring-2 ring-cream ring-offset-4 ring-offset-sangria bg-cream/5 transition-all duration-300 hover:shadow-xl hover:scale-105">
                     <Image
                       src="/images/band_members/Gerd_Benno_Hofmann.jpg"
                       alt="Gerd 'Benno' Hofmann"
