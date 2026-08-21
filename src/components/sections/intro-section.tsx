@@ -5,10 +5,7 @@ export function IntroSection() {
   return (
     <div className="mx-auto max-w-7xl">
       <div className="rounded-[2rem] bg-cream p-8 shadow-soft sm:p-10">
-        <p className="text-sm font-semibold uppercase tracking-[0.35em] text-sangria/75">
-          {content.bandvorstellung.label}
-        </p>
-        <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
+        <h2 className="font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
           {content.bandvorstellung.title}
         </h2>
 
