@@ -115,7 +115,6 @@ export const content = {
             city: "Bad Neustadt an der Saale",
             venue: "Honky Tonk , La Cucina di Francesco",
             address: "Marktplatz 2-4, 97616 Bad Neustadt an der Saale",
-            note: undefined,
           },
           {
             date: "Fr., 01. Mai",
