@@ -18,7 +18,7 @@ export const content = {
     setlist: {
       label: "Setlist",
       title: "Repertoire (Auszug)",
-      intro: "Die Band spielteine umfangreiche Auswahl an Klassikern und beliebten Hits:",
+      intro: "Die Band spielt eine umfangreiche Auswahl an Klassikern und beliebten Hits:",
       songs: [
         "Ain't No Sunshine",
         "Allegria",

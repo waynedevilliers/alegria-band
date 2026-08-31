@@ -8,7 +8,9 @@
       "Bash(google-chrome --headless=new --disable-gpu --window-size=1440,900 --screenshot=/tmp/sections-overview.png http://localhost:3000)",
       "Bash(google-chrome --headless=new --disable-gpu --window-size=1440,2000 --screenshot=/tmp/page-full.png http://localhost:3000)",
       "Bash(google-chrome --headless=new --disable-gpu --window-size=1440,2000 --screenshot=/tmp/sections-1440.png http://localhost:3000)",
-      "Bash(google-chrome --headless=new --disable-gpu --window-size=375,2000 --screenshot=/tmp/sections-375.png http://localhost:3000)"
+      "Bash(google-chrome --headless=new --disable-gpu --window-size=375,2000 --screenshot=/tmp/sections-375.png http://localhost:3000)",
+      "Bash(google-chrome --headless=new --disable-gpu --window-size=1440,900 --screenshot=/tmp/repertoire-fixed.png http://localhost:3000)",
+      "Bash(google-chrome --headless=new --disable-gpu --window-size=1440,2000 --screenshot=/tmp/full-page.png http://localhost:3000)"
     ]
   }
 }
