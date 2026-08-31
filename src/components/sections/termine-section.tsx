@@ -64,7 +64,7 @@ function generateMusicEventSchema(events: Array<{ date: string; time?: string; c
 export function TermineSection() {
   const [expandedYear, setExpandedYear] = useState<number | null>(2026);
 
-  const allEvents = content.termine.years.flatMap(year => year.events) as Array<{ date: string; time?: string; city: string; venue: string; address: string; note?: string }>;
+  const allEvents = (content.termine.years as any).flatMap((year: any) => year.events);
   const musicEventSchemas = generateMusicEventSchema(allEvents);
 
   return (
