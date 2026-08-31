@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { content } from '@/data/content';
 
-function generateMusicEventSchema(events: typeof content.termine.years[0]['events']) {
+function generateMusicEventSchema(events: Array<{ date: string; time?: string; city: string; venue: string; address: string; note?: string }>) {
   const monthMap: Record<string, string> = {
     Januar: '01', Februar: '02', März: '03', April: '04', Mai: '05', Juni: '06',
     Juli: '07', August: '08', September: '09', Oktober: '10', November: '11', Dezember: '12'
