@@ -15,7 +15,10 @@
       "Bash(google-chrome --headless=new --disable-gpu --window-size=1440,2500 --screenshot=/tmp/full-page-musiker.png http://localhost:3000)",
       "Bash(google-chrome --headless=new --disable-gpu --window-size=1440,3500 --screenshot=/tmp/page-with-musiker.png http://localhost:3000)",
       "Bash(google-chrome --headless=new --disable-gpu --window-size=1440,900 --screenshot=/tmp/musiker-section.png --run-all-compositor-stages-before-draw http://localhost:3000 --virtual-time-budget=5000)",
-      "Bash(google-chrome --headless=new --disable-gpu --window-size=375,1600 --screenshot=/tmp/musiker-mobile.png http://localhost:3000)"
+      "Bash(google-chrome --headless=new --disable-gpu --window-size=375,1600 --screenshot=/tmp/musiker-mobile.png http://localhost:3000)",
+      "Bash(google-chrome --headless=new --disable-gpu --window-size=1440,900 --screenshot=/tmp/termine-fixed.png http://localhost:3000)",
+      "Bash(google-chrome --headless=new --disable-gpu --window-size=1440,900 --screenshot=/tmp/termine-check.png http://localhost:3000)",
+      "Bash(google-chrome --headless=new --disable-gpu --window-size=1440,2500 --screenshot=/tmp/page-termine.png http://localhost:3000)"
     ]
   }
 }
