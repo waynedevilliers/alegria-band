@@ -13,11 +13,11 @@ export function HeroSection() {
           <div className="absolute inset-0 mix-blend-multiply bg-linear-to-br from-terracotta/20 via-transparent to-clay/15 pointer-events-none" />
 
           {/* Gradient scrim from bottom-left */}
-          <div className="absolute inset-0 bg-linear-to-tr from-sangria/60 via-sangria/30 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-linear-to-tr from-sangria/85 via-sangria/55 to-sangria/20 pointer-events-none" />
 
           {/* Text overlaid bottom-left */}
           <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-10">
-            <p className="mb-4 inline-flex rounded-full border border-cream/60 bg-cream/30 backdrop-blur-sm px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.35em] text-cream w-fit">
+            <p className="mb-4 inline-flex rounded-full border border-cream/80 bg-cream/65 backdrop-blur-sm px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.35em] text-ink/90 w-fit">
               Nordheim am Main, Germany
             </p>
             <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight text-cream leading-tight drop-shadow-lg">
