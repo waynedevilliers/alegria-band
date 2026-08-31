@@ -269,6 +269,7 @@ export const content = {
       { src: '/images/foto_section/band_vorstellung.jpg', alt: 'Alegría! Bandvorstellung', size: 'medium', galleryIndex: 1 },
       { src: '/images/foto_section/videos.jpg', alt: 'Alegría! Videos', size: 'medium', galleryIndex: 2 },
       { src: '/images/foto_section/termine.jpg', alt: 'Alegría! Termine', size: 'small', galleryIndex: 3 },
+      { src: '/images/Alegria_22.05.2022(Matt_Keyworth)/Alegria_220622_00028.jpg', alt: 'Alegría! stage presence and performance energy', size: 'small', galleryIndex: 21 },
     ],
     gallery: [
       { src: '/images/foto_section/fotos.jpg', alt: 'Alegría! Fotos', size: 'large' },
