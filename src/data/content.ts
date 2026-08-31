@@ -187,7 +187,7 @@ export const content = {
         events: [
           {
             date: "Sa., 25. Januar",
-            time: "15:00 -- 18:00 Uhr",
+            time: "15:00 – 18:00 Uhr",
             city: "Kitzingen",
             venue: "VdK-Ehrenamtsempfang im Katholischen Dekanatszentrum",
             address: "Ritterstraße 5a, 97318 Kitzingen",
