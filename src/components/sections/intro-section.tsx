@@ -4,7 +4,7 @@ import { content } from '@/data/content';
 export function IntroSection() {
   return (
     <div className="mx-auto max-w-7xl">
-      <div className="rounded-[2rem] bg-cream p-8 shadow-soft sm:p-10 ring-2 ring-sangria ring-offset-4 ring-offset-cream">
+      <div className="rounded-[2rem] bg-cream p-8 shadow-soft sm:p-10">
         <h2 className="font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
           {content.bandvorstellung.title}
         </h2>

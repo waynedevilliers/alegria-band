@@ -12,10 +12,7 @@ export function TermineSection() {
       className="scroll-mt-24 space-y-8 bg-sand/40 px-4 py-20 sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
-        <p className="text-sm font-semibold uppercase tracking-[0.35em] text-sangria/75">
-          {content.termine.label}
-        </p>
-        <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
+        <h2 className="font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
           {content.termine.title}
         </h2>
         <p className="mt-4 text-lg text-ink/75">{content.termine.intro}</p>

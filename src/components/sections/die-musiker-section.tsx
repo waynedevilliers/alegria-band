@@ -4,10 +4,7 @@ import { content } from '@/data/content';
 export function DieMusikiSection() {
   return (
     <div className="mx-auto max-w-7xl">
-      <p className="text-sm font-semibold uppercase tracking-[0.35em] text-sangria/75">
-        {content.musiker.label}
-      </p>
-      <h3 className="mt-4 font-display text-3xl font-semibold tracking-tight text-ink">
+      <h3 className="font-display text-3xl font-semibold tracking-tight text-ink">
         {content.musiker.title}
       </h3>
       <p className="mt-4 max-w-2xl text-lg leading-8 text-ink/75">
