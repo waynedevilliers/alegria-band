@@ -20,10 +20,10 @@ export function HeroSection() {
             <p className="mb-4 inline-flex rounded-full border border-cream/80 bg-cream/75 backdrop-blur-md px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.35em] text-ink/95 w-fit">
               Nordheim am Main, Germany
             </p>
-            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight text-cream leading-tight drop-shadow-lg">
+            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight" style={{ textShadow: '0 4px 12px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.4)' }}>
               Alegría!
             </h1>
-            <p className="mt-4 text-base sm:text-lg leading-relaxed text-cream max-w-md drop-shadow-lg">
+            <p className="mt-4 text-base sm:text-lg font-semibold leading-relaxed text-white max-w-md" style={{ textShadow: '0 3px 10px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.3)' }}>
               {content.hero.tagline}
             </p>
             <div className="mt-6 flex flex-wrap gap-3 sm:gap-4">
