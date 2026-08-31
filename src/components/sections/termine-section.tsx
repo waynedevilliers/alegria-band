@@ -3,89 +3,14 @@
 import { useState } from 'react';
 import { content } from '@/data/content';
 
-function generateMusicEventSchema(events: Array<{ date: string; time?: string; city: string; venue: string; address: string; note?: string }>) {
-  const monthMap: Record<string, string> = {
-    Januar: '01', Februar: '02', März: '03', April: '04', Mai: '05', Juni: '06',
-    Juli: '07', August: '08', September: '09', Oktober: '10', November: '11', Dezember: '12'
-  };
-
-  return events.map(event => {
-    try {
-      // Parse date: "Sa., 14. März" -> "2026-03-14"
-      const dateMatch = event.date.match(/(\d+)\.\s+(\w+)/);
-      if (!dateMatch) return null;
-
-      const [, dayStr = '', monthName = ''] = dateMatch;
-      const month = monthMap[monthName] || '01';
-      const day = dayStr.padStart(2, '0');
-      const dateStr = `2026-${month}-${day}`;
-
-      // Parse time: "12:00 – 17:00 Uhr" or "ab 20:00 Uhr"
-      const timeClean = (event.time || '').replace('Uhr', '').trim();
-      const [startTimeStr] = timeClean.match(/\d{2}:\d{2}/) || ['20:00'];
-
-      // Build datetime strings
-      const startDateTime = `${dateStr}T${startTimeStr}:00`;
-      const endTimeMatch = timeClean.match(/–\s*(\d{2}:\d{2})/);
-      const endDateTime = endTimeMatch ? `${dateStr}T${endTimeMatch[1]}:00` : startDateTime;
-
-      return {
-        '@context': 'https://schema.org',
-        '@type': 'MusicEvent',
-        name: `Alegría! – Live Performance in ${event.city}`,
-        description: `Live performance by the band Alegría! at ${event.venue}`,
-        startDate: startDateTime,
-        endDate: endDateTime,
-        eventStatus: 'https://schema.org/EventScheduled',
-        eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-        location: {
-          '@type': 'Place',
-          name: event.venue,
-          address: {
-            '@type': 'PostalAddress',
-            streetAddress: event.address.split(',')[0],
-            addressLocality: event.city,
-            postalCode: event.address.match(/\d{5}/)?.[0] || '',
-            addressCountry: 'DE'
-          }
-        },
-        performer: {
-          '@type': 'MusicGroup',
-          name: 'Alegría!',
-          url: 'https://alegria-band.de'
-        }
-      };
-    } catch {
-      return null;
-    }
-  }).filter(Boolean);
-}
-
 export function TermineSection() {
   const [expandedYear, setExpandedYear] = useState<number | null>(2026);
-
-  const allEvents = (content.termine.years as any).flatMap((year: any) => year.events);
-  const musicEventSchemas = generateMusicEventSchema(allEvents);
 
   return (
     <section
       id="termine"
       className="scroll-mt-24 space-y-8 bg-sand/40 px-4 py-20 sm:px-6 lg:px-8"
     >
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'ItemList',
-            itemListElement: musicEventSchemas.map((event, idx) => ({
-              '@type': 'ListItem',
-              position: idx + 1,
-              item: event
-            }))
-          })
-        }}
-      />
       <div className="mx-auto max-w-7xl">
         <h2 className="font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
           {content.termine.title}
