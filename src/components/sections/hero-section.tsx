@@ -17,13 +17,13 @@ export function HeroSection() {
 
           {/* Text overlaid bottom-left */}
           <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-10">
-            <p className="mb-4 inline-flex rounded-full border border-cream/80 bg-cream/65 backdrop-blur-sm px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.35em] text-ink/90 w-fit">
+            <p className="mb-4 inline-flex rounded-full border border-cream/80 bg-cream/75 backdrop-blur-md px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.35em] text-ink/95 w-fit">
               Nordheim am Main, Germany
             </p>
             <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight text-cream leading-tight drop-shadow-lg">
               Alegría!
             </h1>
-            <p className="mt-4 text-base sm:text-lg leading-relaxed text-cream max-w-md">
+            <p className="mt-4 text-base sm:text-lg leading-relaxed text-cream max-w-md drop-shadow-lg">
               {content.hero.tagline}
             </p>
             <div className="mt-6 flex flex-wrap gap-3 sm:gap-4">
