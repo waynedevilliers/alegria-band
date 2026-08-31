@@ -13,7 +13,7 @@ export function HeroSection() {
           <div className="absolute inset-0 mix-blend-multiply bg-linear-to-br from-terracotta/20 via-transparent to-clay/15 pointer-events-none" />
 
           {/* Gradient scrim from bottom-left */}
-          <div className="absolute inset-0 bg-linear-to-tr from-sangria/85 via-sangria/55 to-sangria/20 pointer-events-none" />
+          <div className="absolute inset-0 bg-linear-to-tr from-sangria/70 via-sangria/40 to-transparent pointer-events-none" />
 
           {/* Text overlaid bottom-left */}
           <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-10">
