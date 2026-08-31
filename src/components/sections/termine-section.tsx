@@ -21,7 +21,7 @@ function generateMusicEventSchema(events: Array<{ date: string; time?: string; c
       const dateStr = `2026-${month}-${day}`;
 
       // Parse time: "12:00 – 17:00 Uhr" or "ab 20:00 Uhr"
-      const timeClean = event.time.replace('Uhr', '').trim();
+      const timeClean = (event.time || '').replace('Uhr', '').trim();
       const [startTimeStr] = timeClean.match(/\d{2}:\d{2}/) || ['20:00'];
 
       // Build datetime strings
@@ -64,7 +64,7 @@ function generateMusicEventSchema(events: Array<{ date: string; time?: string; c
 export function TermineSection() {
   const [expandedYear, setExpandedYear] = useState<number | null>(2026);
 
-  const allEvents = content.termine.years.flatMap(year => year.events);
+  const allEvents = content.termine.years.flatMap(year => year.events) as Array<{ date: string; time?: string; city: string; venue: string; address: string; note?: string }>;
   const musicEventSchemas = generateMusicEventSchema(allEvents);
 
   return (
