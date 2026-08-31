@@ -20,7 +20,14 @@
       "Bash(google-chrome --headless=new --disable-gpu --window-size=1440,900 --screenshot=/tmp/termine-check.png http://localhost:3000)",
       "Bash(google-chrome --headless=new --disable-gpu --window-size=1440,2500 --screenshot=/tmp/page-termine.png http://localhost:3000)",
       "Bash(vercel --version)",
-      "Bash(vercel deploy *)"
+      "Bash(vercel deploy *)",
+      "Bash(bash -c \"until grep -q 'Production:' /tmp/claude-1000/-home-johnblack-dev-work-alegria-band/43132043-4214-4ec5-836e-d8188daad340/tasks/beviicqzb.output 2>/dev/null || grep -q 'Error:' /tmp/claude-1000/-home-johnblack-dev-work-alegria-band/43132043-4214-4ec5-836e-d8188daad340/tasks/beviicqzb.output 2>/dev/null; do sleep 5; done; echo '---'; tail -15 /tmp/claude-1000/-home-johnblack-dev-work-alegria-band/43132043-4214-4ec5-836e-d8188daad340/tasks/beviicqzb.output\")",
+      "Bash(bash -c \"until tail -20 /tmp/claude-1000/-home-johnblack-dev-work-alegria-band/43132043-4214-4ec5-836e-d8188daad340/tasks/bwpy7jjhz.output 2>/dev/null | grep -q -E '\\(Production:|Error:|aborting\\)'; do sleep 5; done; echo '---'; tail -20 /tmp/claude-1000/-home-johnblack-dev-work-alegria-band/43132043-4214-4ec5-836e-d8188daad340/tasks/bwpy7jjhz.output 2>/dev/null\")",
+      "Bash(bash -c \"until tail -5 /tmp/claude-1000/-home-johnblack-dev-work-alegria-band/43132043-4214-4ec5-836e-d8188daad340/tasks/bg2501uo6.output 2>/dev/null | grep -q -E '\\(Production:|Error:|aborting|blocked\\)'; do sleep 5; done; tail -25 /tmp/claude-1000/-home-johnblack-dev-work-alegria-band/43132043-4214-4ec5-836e-d8188daad340/tasks/bg2501uo6.output 2>/dev/null\")",
+      "Bash(bash -c \"until tail -5 /tmp/claude-1000/-home-johnblack-dev-work-alegria-band/43132043-4214-4ec5-836e-d8188daad340/tasks/bvg9tsahp.output 2>/dev/null | grep -q -E '\\(Production:|Error:|blocked\\)'; do sleep 5; done; echo '---'; tail -20 /tmp/claude-1000/-home-johnblack-dev-work-alegria-band/43132043-4214-4ec5-836e-d8188daad340/tasks/bvg9tsahp.output 2>/dev/null\")",
+      "Bash(bash -c \"until tail -3 /tmp/claude-1000/-home-johnblack-dev-work-alegria-band/43132043-4214-4ec5-836e-d8188daad340/tasks/bs88nguu2.output 2>/dev/null | grep -q -E '\\(Production:|Error:|blocked\\)'; do sleep 5; done; tail -25 /tmp/claude-1000/-home-johnblack-dev-work-alegria-band/43132043-4214-4ec5-836e-d8188daad340/tasks/bs88nguu2.output 2>/dev/null\")",
+      "Bash(bash -c \"until tail -3 /tmp/claude-1000/-home-johnblack-dev-work-alegria-band/43132043-4214-4ec5-836e-d8188daad340/tasks/bopgcknda.output 2>/dev/null | grep -q -E '\\(Production:|Error:|blocked\\)'; do sleep 5; done; tail -15 /tmp/claude-1000/-home-johnblack-dev-work-alegria-band/43132043-4214-4ec5-836e-d8188daad340/tasks/bopgcknda.output 2>/dev/null\")",
+      "Bash(bash -c \"until tail -3 /tmp/claude-1000/-home-johnblack-dev-work-alegria-band/43132043-4214-4ec5-836e-d8188daad340/tasks/bs6dr35z8.output 2>/dev/null | grep -q -E '\\(Production:|Error:|blocked\\)'; do sleep 5; done; echo '✓ DEPLOYMENT COMPLETE'; tail -3 /tmp/claude-1000/-home-johnblack-dev-work-alegria-band/43132043-4214-4ec5-836e-d8188daad340/tasks/bs6dr35z8.output 2>/dev/null\")"
     ]
   }
 }
