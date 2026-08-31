@@ -15,7 +15,7 @@ function generateMusicEventSchema(events: typeof content.termine.years[0]['event
       const dateMatch = event.date.match(/(\d+)\.\s+(\w+)/);
       if (!dateMatch) return null;
 
-      const [, dayStr, monthName] = dateMatch;
+      const [, dayStr = '', monthName = ''] = dateMatch;
       const month = monthMap[monthName] || '01';
       const day = dayStr.padStart(2, '0');
       const dateStr = `2026-${month}-${day}`;
