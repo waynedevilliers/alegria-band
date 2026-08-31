@@ -10,6 +10,11 @@ export function SetlistModal({
   title: string;
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const filteredSongs = searchQuery.trim() === ''
+    ? songs
+    : songs.filter(song => song.toLowerCase().includes(searchQuery.toLowerCase()));
 
   return (
     <>
@@ -37,8 +42,18 @@ export function SetlistModal({
               </button>
             </div>
 
+            <div className="sticky top-20 border-b border-sand/50 bg-cream px-6 py-4">
+              <input
+                type="text"
+                placeholder="Lied suchen..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full rounded-lg border border-sand/30 bg-white px-4 py-2 text-ink placeholder-ink/50 transition focus:outline-none focus:ring-2 focus:ring-sangria"
+              />
+            </div>
+
             <div className="grid gap-3 p-6 sm:grid-cols-2">
-              {songs.map((song) => (
+              {filteredSongs.map((song) => (
                 <div
                   key={song}
                   className="flex items-center gap-3 rounded-lg bg-white p-4 border border-sand/30 hover:shadow-md transition"

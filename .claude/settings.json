@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(google-chrome --headless=new --disable-gpu --window-size=1440,900 --screenshot=/tmp/hero-prominent.png http://localhost:3000)",
+      "Bash(google-chrome --headless=new --disable-gpu --window-size=1440,900 --screenshot=/tmp/hero-bold.png http://localhost:3000)",
+      "Bash(google-chrome --headless=new --disable-gpu --window-size=375,1200 --screenshot=/tmp/bandvorstellung-375.png http://localhost:3000)",
+      "Bash(google-chrome --headless=new --disable-gpu --window-size=1440,1200 --screenshot=/tmp/bandvorstellung-1440.png http://localhost:3000/#bandvorstellung)",
+      "Bash(google-chrome --headless=new --disable-gpu --window-size=1440,900 --screenshot=/tmp/sections-overview.png http://localhost:3000)",
+      "Bash(google-chrome --headless=new --disable-gpu --window-size=1440,2000 --screenshot=/tmp/page-full.png http://localhost:3000)",
+      "Bash(google-chrome --headless=new --disable-gpu --window-size=1440,2000 --screenshot=/tmp/sections-1440.png http://localhost:3000)",
+      "Bash(google-chrome --headless=new --disable-gpu --window-size=375,2000 --screenshot=/tmp/sections-375.png http://localhost:3000)",
+      "Bash(google-chrome --headless=new --disable-gpu --window-size=1440,900 --screenshot=/tmp/repertoire-fixed.png http://localhost:3000)",
+      "Bash(google-chrome --headless=new --disable-gpu --window-size=1440,2000 --screenshot=/tmp/full-page.png http://localhost:3000)",
+      "Bash(google-chrome --headless=new --disable-gpu --window-size=1440,900 --screenshot=/tmp/musicians-1440.png http://localhost:3000/#bandvorstellung)",
+      "Bash(google-chrome --headless=new --disable-gpu --window-size=1440,2500 --screenshot=/tmp/full-page-musiker.png http://localhost:3000)",
+      "Bash(google-chrome --headless=new --disable-gpu --window-size=1440,3500 --screenshot=/tmp/page-with-musiker.png http://localhost:3000)",
+      "Bash(google-chrome --headless=new --disable-gpu --window-size=1440,900 --screenshot=/tmp/musiker-section.png --run-all-compositor-stages-before-draw http://localhost:3000 --virtual-time-budget=5000)",
+      "Bash(google-chrome --headless=new --disable-gpu --window-size=375,1600 --screenshot=/tmp/musiker-mobile.png http://localhost:3000)",
+      "Bash(google-chrome --headless=new --disable-gpu --window-size=1440,900 --screenshot=/tmp/termine-fixed.png http://localhost:3000)",
+      "Bash(google-chrome --headless=new --disable-gpu --window-size=1440,900 --screenshot=/tmp/termine-check.png http://localhost:3000)",
+      "Bash(google-chrome --headless=new --disable-gpu --window-size=1440,2500 --screenshot=/tmp/page-termine.png http://localhost:3000)",
+      "Bash(vercel --version)",
+      "Bash(vercel deploy *)"
+    ]
+  }
+}

@@ -28,7 +28,7 @@ export default function Home() {
       <VideosSection />
       <KontaktSection />
 
-      <footer className="border-t border-sand/70 bg-white px-4 py-8 sm:px-6 lg:px-8">
+      <footer className="border-t border-sand/70 bg-cream px-4 py-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl text-center">
           <nav className="mb-4 space-x-4 text-sm">
             <a

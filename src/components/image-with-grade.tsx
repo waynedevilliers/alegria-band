@@ -39,7 +39,7 @@ export function ImageWithGrade({
         className={objectClass}
       />
       {grade && (
-        <div className="absolute inset-0 bg-linear-to-br from-primary/15 via-transparent to-primary/20 mix-blend-multiply pointer-events-none" />
+        <div className="absolute inset-0 bg-linear-to-br from-sangria/15 via-transparent to-sangria/20 mix-blend-multiply pointer-events-none" />
       )}
     </div>
   );

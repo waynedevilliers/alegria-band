@@ -147,18 +147,6 @@ section::before {
     line-height: 1.5;
   }
 
-  /* Semantic color utilities */
-  .bg-primary {
-    @apply bg-primary;
-  }
-
-  .text-primary {
-    @apply text-primary;
-  }
-
-  .border-primary {
-    @apply border-primary;
-  }
 
   /* Micro-interactions */
   .hover-lift {
@@ -209,5 +197,29 @@ section::before {
 
   .animate-stagger {
     animation: stagger 0.4s ease-out forwards;
+  }
+
+  /* Hero section scale-in animation */
+  @keyframes heroScaleIn {
+    from {
+      opacity: 0;
+      transform: scale(1.02);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .hero-image-card {
+    animation: heroScaleIn 0.8s ease-out forwards;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-image-card {
+      animation: none;
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 }

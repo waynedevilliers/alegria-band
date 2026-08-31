@@ -2,41 +2,26 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
+import Lightbox from 'yet-another-react-lightbox';
+import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
+import Counter from 'yet-another-react-lightbox/plugins/counter';
+import 'yet-another-react-lightbox/styles.css';
+import 'yet-another-react-lightbox/plugins/thumbnails.css';
 import { content } from '@/data/content';
 import { ImageWithGrade } from '@/components/image-with-grade';
 
-const galleryImages = [
-  {
-    src: '/images/foto_section/fotos.jpg',
-    alt: 'Alegría! Fotos',
-    size: 'large', // 2x2
-  },
-  {
-    src: '/images/foto_section/band_vorstellung.jpg',
-    alt: 'Alegría! Bandvorstellung',
-    size: 'medium', // 1x1
-  },
-  {
-    src: '/images/foto_section/videos.jpg',
-    alt: 'Alegría! Videos',
-    size: 'medium', // 1x1
-  },
-  {
-    src: '/images/foto_section/kontakt.jpg',
-    alt: 'Alegría! Kontakt',
-    size: 'small', // 1x1 small
-  },
-  {
-    src: '/images/foto_section/termine.jpg',
-    alt: 'Alegría! Termine',
-    size: 'small', // 1x1 small
-  },
-];
+const allPhotos = content.photos.gallery;
+const curatedPhotos = content.photos.curated;
 
 export function FotosSection() {
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [index, setIndex] = useState(-1);
 
-  const currentImage = selectedIndex !== null ? galleryImages[selectedIndex] : null;
+  const lightboxSlides = allPhotos.map((image) => ({
+    src: image.src,
+    alt: image.alt,
+    width: 1200,
+    height: 1200,
+  }));
 
   const sizeClasses = {
     large: 'md:col-span-2 md:row-span-2',
@@ -44,29 +29,31 @@ export function FotosSection() {
     small: 'md:col-span-1 md:row-span-1',
   };
 
+  const handleCuratedClick = (galleryIndex: number) => {
+    setIndex(galleryIndex);
+  };
+
   return (
     <section
       id="fotos"
-      className="scroll-mt-24 space-y-8 bg-surface px-4 py-20 sm:px-6 lg:px-8"
+      className="scroll-mt-24 space-y-8 bg-cream px-4 py-20 pb-12 sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
-        <p className="text-sm font-semibold uppercase tracking-[0.35em] text-primary/75">
-          {content.photos.label}
-        </p>
-        <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
+        <h2 className="font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
           {content.photos.title}
         </h2>
-        <p className="mt-4 text-lg text-text-muted">{content.photos.intro}</p>
+        <p className="mt-4 text-lg text-ink/75">{content.photos.intro}</p>
       </div>
 
-      {/* Masonry Gallery */}
+      {/* Curated Masonry Grid */}
       <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 md:grid-rows-3 auto-rows-max">
-          {galleryImages.map((image, index) => (
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 auto-rows-max">
+          {curatedPhotos.map((image) => (
             <button
-              key={index}
-              onClick={() => setSelectedIndex(index)}
-              className={`group relative overflow-hidden rounded-xl shadow-soft hover:shadow-md transition-all duration-300 hover:scale-105 ${sizeClasses[image.size as keyof typeof sizeClasses]} aspect-square`}
+              key={image.galleryIndex}
+              onClick={() => handleCuratedClick(image.galleryIndex)}
+              className={`group relative overflow-hidden rounded-xl shadow-soft hover:shadow-md transition-all duration-300 hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-sangria focus-visible:ring-offset-2 ${sizeClasses[image.size as keyof typeof sizeClasses]} aspect-square`}
+              aria-label={`Open ${image.alt}`}
             >
               <ImageWithGrade
                 src={image.src}
@@ -80,55 +67,27 @@ export function FotosSection() {
         </div>
       </div>
 
-      {/* Lightbox Modal */}
-      {currentImage && selectedIndex !== null && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-ink/80 p-4 backdrop-blur-md"
-          onClick={() => setSelectedIndex(null)}
-        >
-          <div
-            className="relative max-w-4xl w-full bg-surface rounded-2xl overflow-hidden shadow-glow"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="relative aspect-video bg-ink/10">
-              <Image
-                src={currentImage.src}
-                alt={currentImage.alt}
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
-
-            <div className="flex items-center justify-between gap-4 border-t border-surface-alt p-6">
-              <p className="text-sm font-medium text-text-muted">{currentImage.alt}</p>
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => setSelectedIndex((selectedIndex - 1 + galleryImages.length) % galleryImages.length)}
-                  className="rounded-lg border border-surface-alt px-3 py-2 text-sm font-medium text-text hover:bg-surface-alt transition"
-                >
-                  ← Prev
-                </button>
-                <span className="text-sm text-text-muted">
-                  {selectedIndex + 1} / {galleryImages.length}
-                </span>
-                <button
-                  onClick={() => setSelectedIndex((selectedIndex + 1) % galleryImages.length)}
-                  className="rounded-lg border border-surface-alt px-3 py-2 text-sm font-medium text-text hover:bg-surface-alt transition"
-                >
-                  Next →
-                </button>
-                <button
-                  onClick={() => setSelectedIndex(null)}
-                  className="ml-4 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-text-light hover:bg-primary/90 transition"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Yet Another React Lightbox */}
+      <Lightbox
+        slides={lightboxSlides}
+        open={index >= 0}
+        index={index}
+        close={() => setIndex(-1)}
+        on={{
+          view: ({ index: currentIndex }) => setIndex(currentIndex),
+        }}
+        plugins={[Thumbnails, Counter]}
+        thumbnails={{
+          position: 'bottom',
+          width: 100,
+          height: 100,
+          border: 1,
+          borderColor: 'rgba(255, 255, 255, 0.2)',
+          gap: 4,
+          padding: 4,
+        }}
+        counter={{ container: { style: { top: 0, left: 0 } } }}
+      />
     </section>
   );
 }
