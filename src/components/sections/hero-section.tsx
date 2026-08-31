@@ -17,7 +17,7 @@ export function HeroSection() {
 
           {/* Text overlaid bottom-left */}
           <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-10">
-            <p className="mb-4 inline-flex rounded-full border border-cream/90 bg-cream/85 backdrop-blur-lg px-5 py-2.5 text-xs font-bold uppercase tracking-[0.35em] text-white w-fit" style={{ textShadow: '0 2px 6px rgba(0, 0, 0, 0.4)' }}>
+            <p className="mb-4 inline-flex rounded-full border border-cream/90 bg-cream/85 backdrop-blur-lg px-5 py-2.5 text-xs font-bold uppercase tracking-[0.35em] text-ink w-fit">
               Nordheim am Main, Germany
             </p>
             <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight" style={{ textShadow: '0 4px 12px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.4)' }}>
