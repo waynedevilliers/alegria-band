@@ -27,7 +27,7 @@ export default function Home() {
         <RepertoireSection />
       </section>
 
-      <section className="scroll-mt-24 space-y-8 bg-cream px-4 py-20 sm:px-6 lg:px-8">
+      <section className="scroll-mt-24 space-y-8 bg-sand/40 px-4 py-20 sm:px-6 lg:px-8">
         <DieMusikiSection />
       </section>
 

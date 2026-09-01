@@ -9,7 +9,7 @@ export function TermineSection() {
   return (
     <section
       id="termine"
-      className="scroll-mt-24 space-y-8 bg-sand/40 px-4 py-20 sm:px-6 lg:px-8"
+      className="scroll-mt-24 space-y-8 bg-cream px-4 py-20 sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
         <h2 className="font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
