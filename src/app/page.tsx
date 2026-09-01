@@ -19,13 +19,20 @@ export default function Home() {
         className="scroll-mt-24 space-y-16 bg-cream px-4 py-20 sm:px-6 lg:px-8"
       >
         <IntroSection />
+      </section>
+
+      <VideosSection />
+
+      <section className="scroll-mt-24 space-y-8 bg-cream px-4 py-20 sm:px-6 lg:px-8">
         <RepertoireSection />
+      </section>
+
+      <section className="scroll-mt-24 space-y-8 bg-cream px-4 py-20 sm:px-6 lg:px-8">
         <DieMusikiSection />
       </section>
 
       <TermineSection />
       <FotosSection />
-      <VideosSection />
       <KontaktSection />
 
       <footer className="border-t border-sand/70 bg-cream px-4 py-8 sm:px-6 lg:px-8">
