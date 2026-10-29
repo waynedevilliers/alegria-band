@@ -50,7 +50,7 @@ export function KontaktSection() {
                     </p>
                     <a
                       href={`mailto:${content.contact.email}`}
-                      className="text-xl font-semibold text-cream transition hover:text-sand break-all"
+                      className="text-xl font-semibold text-cream transition hover:text-sand break-words"
                     >
                       {content.contact.email}
                     </a>
@@ -73,7 +73,7 @@ export function KontaktSection() {
                   <div className="pt-4">
                     <a
                       href={`mailto:${content.contact.email}?subject=${encodeURIComponent('Booking anfragen')}`}
-                      className="flex items-center justify-center gap-3 rounded-full bg-cream px-12 py-6 text-2xl font-bold text-sangria shadow-2xl transition duration-300 hover:bg-sand hover:shadow-glow hover:scale-105 ring-2 ring-cream/30 w-full"
+                      className="flex items-center justify-center gap-3 rounded-full bg-cream px-6 py-6 text-xl font-bold sm:px-12 sm:text-2xl text-sangria shadow-2xl transition duration-300 hover:bg-sand hover:shadow-glow hover:scale-105 ring-2 ring-cream/30 w-full"
                     >
                       <span aria-hidden="true">✉</span>
                       {content.contact.booking}

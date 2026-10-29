@@ -24,8 +24,8 @@ export function DieMusikiSection() {
               {/* Warm color grade overlay for consistency */}
               <div className="absolute inset-0 mix-blend-multiply bg-linear-to-br from-terracotta/15 via-transparent to-clay/10 pointer-events-none" />
             </div>
-            <h4 className="mt-4 font-display text-lg font-semibold text-ink text-center">{member.name}</h4>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-clay text-center">
+            <h4 className="mt-4 flex min-h-[3.5rem] items-end justify-center font-display text-lg font-semibold text-ink text-center">{member.name}</h4>
+            <p className="flex min-h-[2.5rem] items-start justify-center text-sm font-semibold uppercase tracking-[0.2em] text-clay text-center">
               {member.role}
             </p>
           </div>
