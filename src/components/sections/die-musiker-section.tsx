@@ -25,7 +25,7 @@ export function DieMusikiSection() {
               <div className="absolute inset-0 mix-blend-multiply bg-linear-to-br from-terracotta/15 via-transparent to-clay/10 pointer-events-none" />
             </div>
             <h4 className="mt-4 whitespace-nowrap font-display text-sm font-semibold text-ink text-center sm:text-lg sm:whitespace-normal">{member.name}</h4>
-            <p className="min-h-[4rem] text-sm font-semibold uppercase tracking-[0.1em] text-clay text-center sm:min-h-0 sm:tracking-[0.2em]">
+            <p className="mt-2 min-h-[4rem] text-xs font-semibold uppercase tracking-[0.1em] text-clay text-center sm:mt-0 sm:min-h-0 sm:text-sm sm:tracking-[0.2em]">
               {member.role.split(', ').map((part, i, parts) => (
                 <span key={part} className="block sm:inline">
                   {part}
