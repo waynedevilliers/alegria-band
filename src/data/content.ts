@@ -306,7 +306,7 @@ export const content = {
     label: "Videos / Hörproben",
     title: "Videos / Hörproben",
     intro: "Hier kann sich jeder mal einen akustischen Eindruck verschaffen – wir haben ein paar Stücke auf YouTube gestellt. Viel Spaß damit!",
-    items: ["ztBbjKQw6hs", "ih-cQfGWJUA", "UC-QS9T58jc", "zjdLQ7347nk", "qC9ErwyvM-g"],
+    items: ["6YnFkUsx480", "bENOSunL23Y"],
   },
   contact: {
     label: "Kontakt",

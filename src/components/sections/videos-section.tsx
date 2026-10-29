@@ -15,7 +15,7 @@ export function VideosSection() {
       </div>
 
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2">
           {content.videos.items.map((videoId) => (
             <LiteYouTube
               key={videoId}
