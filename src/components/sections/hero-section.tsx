@@ -18,7 +18,7 @@ export function HeroSection() {
           {/* Text overlaid bottom-left */}
           <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-10">
             <p className="mb-4 inline-flex rounded-full border border-cream/90 bg-cream/85 backdrop-blur-lg px-5 py-2.5 text-xs font-bold uppercase tracking-[0.35em] text-ink w-fit">
-              Nordheim am Main, Deutschland
+              Nordheim am Main, Germany
             </p>
             <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight" style={{ textShadow: '0 4px 12px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.4)' }}>
               Alegría!
@@ -56,8 +56,8 @@ export function HeroSection() {
 
         {/* Text below image on mobile */}
         <div className="px-4 sm:px-0 mt-8 space-y-4">
-          <p className="inline-flex rounded-full border border-sangria/30 bg-sangria/10 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.35em] text-sangria/75 w-fit">
-            Nordheim am Main, Deutschland
+          <p className="inline-flex rounded-full border border-sangria/30 bg-sangria/10 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] md:tracking-[0.35em] text-sangria/75 w-fit">
+            Nordheim am Main, Germany
           </p>
           <h1 className="font-display text-5xl sm:text-6xl font-semibold tracking-tight text-ink leading-tight">
             Alegría!
