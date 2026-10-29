@@ -16,7 +16,7 @@ export default function Home() {
 
       <section
         id="bandvorstellung"
-        className="scroll-mt-24 space-y-16 bg-cream px-4 py-20 sm:px-6 lg:px-8"
+        className="scroll-mt-24 space-y-16 bg-cream px-4 pb-10 pt-10 sm:px-6 sm:pb-20 sm:pt-20 lg:px-8"
       >
         <IntroSection />
         <RepertoireSection />

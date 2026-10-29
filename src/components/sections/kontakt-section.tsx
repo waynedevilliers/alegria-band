@@ -8,7 +8,7 @@ export function KontaktSection() {
       className="scroll-mt-24 bg-cream px-4 py-20 sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="rounded-[2rem] bg-sangria p-8 text-cream shadow-glow sm:p-10">
+        <div className="rounded-[2rem] bg-sangria p-5 text-cream shadow-glow sm:p-10">
           {/* Grid: Contact panel dominant (right), supporting content secondary (left) */}
           <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:items-center">
             {/* Left column: Supporting content (smaller, secondary) */}
@@ -41,7 +41,7 @@ export function KontaktSection() {
 
             {/* Right column: Contact panel dominant (larger, focal point) */}
             <div className="order-1 lg:order-2">
-              <div className="rounded-[1.75rem] bg-cream/15 backdrop-blur-sm p-8 sm:p-10">
+              <div className="rounded-[1.75rem] bg-cream/15 backdrop-blur-sm p-5 sm:p-10">
                 <div className="space-y-6">
                   {/* Email */}
                   <div>
@@ -50,7 +50,7 @@ export function KontaktSection() {
                     </p>
                     <a
                       href={`mailto:${content.contact.email}`}
-                      className="text-xl font-semibold text-cream transition hover:text-sand break-all"
+                      className="text-base font-semibold text-cream transition hover:text-sand sm:text-xl whitespace-nowrap"
                     >
                       {content.contact.email}
                     </a>
@@ -73,7 +73,7 @@ export function KontaktSection() {
                   <div className="pt-4">
                     <a
                       href={`mailto:${content.contact.email}?subject=${encodeURIComponent('Booking anfragen')}`}
-                      className="flex items-center justify-center gap-3 rounded-full bg-cream px-12 py-6 text-2xl font-bold text-sangria shadow-2xl transition duration-300 hover:bg-sand hover:shadow-glow hover:scale-105 ring-2 ring-cream/30 w-full"
+                      className="flex items-center justify-center gap-3 rounded-full bg-cream px-6 py-6 text-xl font-bold sm:px-12 sm:text-2xl text-sangria shadow-2xl transition duration-300 hover:bg-sand hover:shadow-glow hover:scale-105 ring-2 ring-cream/30 w-full"
                     >
                       <span aria-hidden="true">✉</span>
                       {content.contact.booking}

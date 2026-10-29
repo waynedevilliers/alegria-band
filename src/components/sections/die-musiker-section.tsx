@@ -10,9 +10,9 @@ export function DieMusikiSection() {
       <p className="mt-4 max-w-2xl text-lg leading-8 text-ink/75">
         {content.musiker.intro}
       </p>
-      <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-1 justify-items-center">
+      <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-x-1 gap-y-10 sm:gap-y-1 justify-items-center">
         {content.musiker.members.map((member, index) => (
-          <div key={member.name} className="flex flex-col items-center w-full">
+          <div key={member.name} className="flex flex-col items-center w-full px-2 sm:px-0">
             <div className="relative w-32 h-44 rounded-lg overflow-hidden shadow-md ring-2 ring-sangria ring-offset-4 ring-offset-cream transition-all duration-300 hover:shadow-lg hover:shadow-sangria/40 motion-safe:hover:scale-105">
               <Image
                 src={member.image}
@@ -24,9 +24,15 @@ export function DieMusikiSection() {
               {/* Warm color grade overlay for consistency */}
               <div className="absolute inset-0 mix-blend-multiply bg-linear-to-br from-terracotta/15 via-transparent to-clay/10 pointer-events-none" />
             </div>
-            <h4 className="mt-4 font-display text-lg font-semibold text-ink text-center">{member.name}</h4>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-clay text-center">
-              {member.role}
+            <h4 className="mt-4 whitespace-nowrap font-display text-sm font-semibold text-ink text-center sm:text-lg sm:whitespace-normal">{member.name}</h4>
+            <p className="mt-2 min-h-[4rem] text-xs font-semibold uppercase tracking-[0.1em] text-clay text-center sm:mt-0 sm:min-h-0 sm:text-sm sm:tracking-[0.2em]">
+              {member.role.split(', ').map((part, i, parts) => (
+                <span key={part} className="block sm:inline">
+                  {part}
+                  {i < parts.length - 1 ? ',' : ''}
+                  {i < parts.length - 1 ? ' ' : ''}
+                </span>
+              ))}
             </p>
           </div>
         ))}

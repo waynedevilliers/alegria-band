@@ -5,7 +5,7 @@ const heroImage = '/images/Alegria_22.05.2022(Matt_Keyworth)/Alegria_220622_0001
 
 export function HeroSection() {
   return (
-    <section id="hero" className="relative bg-cream px-4 sm:px-8 pt-0 pb-12 sm:pb-16 lg:pb-20 lg:min-h-svh lg:flex lg:items-center lg:justify-center">
+    <section id="hero" className="relative bg-cream px-4 sm:px-8 pt-0 pb-2 sm:pb-16 lg:pb-20 lg:min-h-svh lg:flex lg:items-center lg:justify-center">
       {/* Desktop: Image with overlay (lg and above) */}
       <div className="hidden lg:block hero-image-card relative mx-auto" style={{ width: '90vw', aspectRatio: '800/590', maxWidth: '90vw', maxHeight: '80vh' }}>
         <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl border-4 border-sand/40 bg-cream">
@@ -46,9 +46,9 @@ export function HeroSection() {
       </div>
 
       {/* Mobile: Image only, then text below in normal flow (below lg) */}
-      <div className="lg:hidden mx-auto w-full px-0 sm:px-4">
-        <div className="hero-image-card relative -mx-4 sm:mx-auto" style={{ width: 'calc(100% + 2rem)', aspectRatio: '800/590', maxWidth: 'calc(100% + 2rem)' }}>
-          <div className="relative w-full h-full rounded-b-2xl sm:rounded-3xl overflow-hidden shadow-2xl sm:border-4 sm:border-sand/40 bg-cream">
+      <div className="lg:hidden mx-auto w-full px-0 sm:px-4 pt-3">
+        <div className="hero-image-card relative mx-1 w-[calc(100%_-_0.5rem)] max-w-[calc(100%_-_0.5rem)] sm:mx-auto sm:w-[calc(100%_+_2rem)] sm:max-w-[calc(100%_+_2rem)]" style={{ aspectRatio: '7916/4000' }}>
+          <div className="relative w-full h-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl sm:border-4 sm:border-sand/40 bg-cream">
             <Image src={heroImage} alt={content.hero.imageAlt} fill priority className="object-contain" />
             <div className="absolute inset-0 mix-blend-multiply bg-linear-to-br from-terracotta/20 via-transparent to-clay/15 pointer-events-none" />
           </div>
@@ -56,7 +56,7 @@ export function HeroSection() {
 
         {/* Text below image on mobile */}
         <div className="px-4 sm:px-0 mt-8 space-y-4">
-          <p className="inline-flex rounded-full border border-sangria/30 bg-sangria/10 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.35em] text-sangria/75 w-fit">
+          <p className="inline-flex rounded-full border border-sangria/30 bg-sangria/10 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] md:tracking-[0.35em] text-sangria/75 w-fit">
             Nordheim am Main, Germany
           </p>
           <h1 className="font-display text-5xl sm:text-6xl font-semibold tracking-tight text-ink leading-tight">
