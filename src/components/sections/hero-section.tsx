@@ -48,7 +48,7 @@ export function HeroSection() {
       {/* Mobile: Image only, then text below in normal flow (below lg) */}
       <div className="lg:hidden mx-auto w-full px-0 sm:px-4 pt-3">
         <div className="hero-image-card relative -mx-4 sm:mx-auto" style={{ width: 'calc(100% + 2rem)', aspectRatio: '7916/4000', maxWidth: 'calc(100% + 2rem)' }}>
-          <div className="relative w-full h-full rounded-b-2xl sm:rounded-3xl overflow-hidden shadow-2xl sm:border-4 sm:border-sand/40 bg-cream">
+          <div className="relative w-full h-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl sm:border-4 sm:border-sand/40 bg-cream">
             <Image src={heroImage} alt={content.hero.imageAlt} fill priority className="object-contain" />
             <div className="absolute inset-0 mix-blend-multiply bg-linear-to-br from-terracotta/20 via-transparent to-clay/15 pointer-events-none" />
           </div>
